@@ -2,318 +2,278 @@
     --corDestaque: #7F339A;
     --corFundo: #170A1C;
     --corTercearia: #52365C;
-    --corVerde: #2E8B57;
+    --corVerde: #1b4e0e;
     --corBrancoPerola: #F0E6FF;
     --corAzulClaro: #5995CE;
     --corAzulEscuro: #297FBD;
-    --corRoxoClaro: #845AD7; 
+    --corRoxoClaro: #845AD7;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--corFundo);
-}
-
-
-.logo>a {
-    text-decoration: none;
-}
-
-.logo span {
-    font-size: 1.4rem;
-    text-decoration: none;
-}
-
-.logo .mesoName {
-    color: #2E8B57;
-}
-
-.logo .mindsName {
-    color: #F0E6FF;
+    font-family: sans-serif;
+    color: var(--corBrancoPerola);
+    line-height: 1.4;
 }
 
 nav {
     display: flex;
-    text-align: center;
     justify-content: space-between;
-    margin: 1vh 1vh;
-    padding: 0 20px;
+    gap: 0.1rem;
+    padding: 1rem;
 }
 
-nav>div:first-child {
-    margin-right: auto;
+nav .logo {
+    margin-bottom: 0.5rem;
 }
 
-nav>a {
-    margin: 0 20px;
-    font-size: 1.5rem;
-    text-decoration: none;
+nav a {
     color: white;
-}
-
-.espacoVazio {
-    margin-left: auto;
-    display: flex;
-    gap: 10px;
-    transition: all 0.3s ease;
-    background-color: transparent;
-
+    text-decoration: none;
+    font-size: 0.6rem;
 }
 
 .ComeceAgoraArea {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 2rem 1rem;
     text-align: center;
-    margin: 3.5rem;
 }
 
 .ComeceAgoraArea h1 {
-    color: var(--corBrancoPerola);
-    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .ComeceAgoraArea a {
-    padding: 10px;
-    background-color: var(--corAzulClaro);
-    text-decoration: none;
+    background-color: #298ADA;
     color: white;
-    border-radius: 10px;
-    font-size: large;
-    box-shadow: 1px 1px 5px 1px black;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    width: fit-content;
-    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    transition: transform .3s, opacity .3s;
 }
 
 .ComeceAgoraArea a:hover {
-    opacity: 0.9;
+    opacity: .9;
     transform: translateY(-2px);
 }
 
 .bannerArea {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    margin: 1rem;
+    text-align: center;
 }
 
 .profArea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 2rem 1rem;
     text-align: center;
-    margin-top: 4vh;
-    margin-bottom: 5vh;
-    flex-direction: column;
 }
 
 .profArea h1 {
-    margin-bottom: 4.5vh;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
     color: var(--corBrancoPerola);
-    font-size: 2em;
 }
 
 .profImgsContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
     align-items: center;
-    flex-direction: row;
-    gap: 14vh;
-}
-
-.profImg {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: var(--corBrancoPerola);
-    overflow: hidden;
-    position: relative;
 }
 
 .profItem {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 0.5rem;
 }
 
-.profName {
-    color: var(--corBrancoPerola);
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding: 8px 15px;
-    border-radius: 15px;
-    background: var(--corVerde);
-    width: fit-content;
-    margin: 0 auto;
+.profImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--corBrancoPerola);
+    overflow: hidden;
+    position: relative;
 }
 
 .profImg img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    position: absolute; 
-    object-position: center center;
-    top: 0;
-    left: 0;
+    object-fit: cover;
 }
 
-.profImg:nth-child(1) img {
-    position: absolute;
-    top: -2%;
-    left: 5%;
-    object-position: center 30%;
-}
-
-.questoesContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 0 3vh;
-    margin-bottom: 5vh;
-}
-
-.questoesContainer h2 {
-    text-align: left;
-    margin: 3vh 3vh 1.5vh 3vh;
-    color: var(--corBrancoPerola)
-}
-
-.questoesContainer h4 {
-    text-align: left;
-    margin: 1.5vh 3vh;
-    margin-bottom: 4vh;
-    color: var(--corBrancoPerola)
+.profName {
+    background: var(--corVerde);
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .questoesContent {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .questContArea {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
 }
 
 .questContArea a {
-    background-color: var(--corAzulClaro);
-    text-decoration: none;
+    background: #471e578e;
     color: white;
-    border-radius: 10px;
-    font-size: large;
-    box-shadow: 1px 1px 5px 1px black;
-    width: 200px;
-    margin: 0 auto;
-    padding: 5px;
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .questEnemeArea {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    width: 50%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+    width: 100%;
 }
 
 .questEnemeArea a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--corAzulEscuro);
-    text-decoration: none;
+    background: var(--corAzulEscuro);
     color: white;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 1px black;
-    width: 80%;
-    height: 6em;
-    padding: 5px;
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    height: 100%;
 }
 
 .CadasAgoraArea {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    background: var(--corBrancoPerola);
+    color: var(--corVerde);
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    padding: 2rem 1rem;
     text-align: center;
-    align-items: center;
-    background-color: var(--corBrancoPerola);
-    border-radius: 20px 20px;
-    height: 50vh;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .CadasAgoraArea h1 {
-
-    color: var(--corVerde);
-    margin-bottom: 0.5em;
-    margin-top: 2.5em;
-
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .CadasAgoraArea a {
-    background-color: var(--corDestaque);
-    text-decoration: none;
+    background: var(--corDestaque);
     color: white;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 1px black;
-    width: fit-content;
-    padding: 8px;
-    margin-top: 2.5em;
-    justify-content: center;
-    font-size: larger;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .footerContainer {
-    background-color: var(--corBrancoPerola);
-    border-top: 2px solid var(--corDestaque);
-    padding: 40px 20px;
-    margin-top: 25px;
-    border-radius: 15px 15px 0 0 ;
+    background: var(--corBrancoPerola);
+    color: black;
+    padding: 2rem 1rem;
+    border-top: 0.25rem solid var(--corDestaque);
+    border-radius: 1rem 1rem 0 0;
 }
 
 .footerGrid {
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.grid-item {
-    padding: 0;
-    display: flex; 
-    flex-direction: column;
-}
-
-.grid-item a{
-    text-decoration: none;
-    color: black;
-}
-
-.grid-item a:hover{
-    color: var(--corDestaque);
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
 .grid-item h3 {
     color: var(--corVerde);
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
+.grid-item a,
 .grid-item p {
     color: black;
-    margin-bottom: 8px;
-    cursor: pointer;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
 }
 
-.support-button {
+.grid-item a:hover {
     color: var(--corDestaque);
+}
+
+@media (min-width: 600px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 0 1rem;
+        font-size: 1.3rem;
+    }
+
+    .ComeceAgoraArea {
+        margin: 3rem auto;
+        max-width: 600px;
+    }
+
+    .profImgsContainer {
+        flex-direction: row;
+        gap: 3rem;
+    }
+
+    .questoesContent {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .questContArea {
+        width: 45%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .questEnemeArea {
+        width: 55%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footerGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .ComeceAgoraArea {
+        max-width: 800px;
+    }
+
+    .profImg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .CadasAgoraArea {
+        padding: 3rem 2rem;
+    }
 }

@@ -19,6 +19,52 @@ body {
     background-color: var(--corFundo);
 }
 
+
+.logo>a {
+    text-decoration: none;
+}
+
+.logo span {
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.logo .mesoName {
+    color: #2E8B57;
+}
+
+.logo .mindsName {
+    color: #F0E6FF;
+}
+
+nav {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin: 1vh 1vh;
+    padding: 0 20px;
+}
+
+nav>div:first-child {
+    margin-right: auto;
+}
+
+nav>a {
+    margin: 0 20px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+}
+
+.espacoVazio {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+
+}
+
 .ComeceAgoraArea {
     display: flex;
     flex-direction: column;
@@ -225,4 +271,49 @@ body {
     margin-top: 2.5em;
     justify-content: center;
     font-size: larger;
+}
+
+.footerContainer {
+    background-color: var(--corBrancoPerola);
+    border-top: 2px solid var(--corDestaque);
+    padding: 40px 20px;
+    margin-top: 25px;
+    border-radius: 15px 15px 0 0 ;
+}
+
+.footerGrid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    padding: 0;
+    display: flex; 
+    flex-direction: column;
+}
+
+.grid-item a{
+    text-decoration: none;
+    color: black;
+}
+
+.grid-item a:hover{
+    color: var(--corDestaque);
+}
+
+.grid-item h3 {
+    color: var(--corVerde);
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    color: black;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.support-button {
+    color: var(--corDestaque);
 }

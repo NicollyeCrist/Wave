@@ -11,7 +11,24 @@
 </head>
 
 <body>
-    <?php include '../component/navbarSite.php'; ?>
+<header>
+        <nav>
+            <div class="logo">
+                <a href="#">
+                    <span>LOGO</span>
+                    <span class="mesoName">Meso</span>
+                    <span class="mindsName">Minds</span>
+                </a>
+            </div>
+            <a href="#">Conteúdos</a>
+            <a href="..\views\questoes.php">Questões</a>
+            <a href="#">Simulado</a>
+            <div class="loginButton">
+                <a href="#">Entrar</a>
+                <a href="#">Registrar-se</a>
+            </div>
+        </nav>
+    </header>
     <main>
         <h1>
             Questões por assunto
@@ -56,9 +73,36 @@
             </div>
         </div>
     </main>
+    <footer class="footerContainer">
+        <div class="footerGrid">
+            <div class="grid-item">
+                <h3>
+                    <span class="mesoName">Meso</span>
+                    <span class="mindsName">Minds</span>
+                </h3>
+                <p>Plataforma dedicada ao ensino de matemática grátis!</p>
+            </div>
+            <div class="grid-item">
+                <h3>Recursos</h3>
+                <p><a href="#">Resolver questões</a></p>
+                <p><a href="#">Resolver simulados</a></p>
+                <p><a href="#">Aprender matemática</a></p>
+            </div>
 
-    <?php include '../component/footer.php' ; ?>
+            <div class="grid-item">
+                <h3>Contato</h3>
+                <p><a href="#">Fale conosco</a></p>
+                <p><a href="#">Seja aluno</a></p>
+                <p><a href="#">Seja professor</a></p>
+            </div>
 
+            <div class="grid-item">
+                <h3>Suporte</h3>
+                <p><a href="#">Dúvidas</a></p>
+                <p><a href="#">Apoie o projeto</a></p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

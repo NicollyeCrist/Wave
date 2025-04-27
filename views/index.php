@@ -43,24 +43,26 @@
             Conheça seus professores!
         </h1>
         <div class="profImgsContainer">
-            <div class="profItem">
+            <a href="#" class="profItem">
                 <div class="profImg">
-                    <img src="..\imgs\CLEIDIMENO.png">
+                    <img src="..\imgs\CLEIDIMENO.png" alt="Prof. Cleidi">
                 </div>
                 <span class="profName">Prof. Cleidi</span>
-            </div>
-            <div class="profItem">
+            </a>
+
+            <a href="#" class="profItem">
                 <div class="profImg">
-                    <img src="..\imgs\JACKSUMENOR.png">
+                    <img src="..\imgs\JACKSUMENOR.png" alt="Prof. Jackson">
                 </div>
-                <span class="profName">Prof. Jaskson</span>
-            </div>
-            <div class="profItem">
+                <span class="profName">Prof. Jackson</span>
+            </a>
+
+            <a href="#" class="profItem">
                 <div class="profImg">
+                    <!-- Aqui poderia ter uma imagem padrão, se quiser -->
                 </div>
                 <span class="profName">Em breve!</span>
-            </div>
-
+            </a>
         </div>
     </div>
 
@@ -77,10 +79,10 @@
                 <a href="#">Aritmética</a>
             </div>
             <div class="questEnemeArea">
-                <a href="#">Questões ENEM ANO</a>
-                <a href="#">Questões ENEM ANO</a>
-                <a href="#">Questões ENEM ANO</a>
-                <a href="#">Questões ENEM ANO</a>
+                <a href="#">Questões ENEM 2024</a>
+                <a href="#">Questões ENEM 2023</a>
+                <a href="#">Questões ENEM 2022</a>
+                <a href="#">Questões ENEM 2021</a>
             </div>
         </div>
     </div>

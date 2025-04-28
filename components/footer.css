@@ -21,14 +21,13 @@
     padding: 2rem 1rem;
     border-top: 0.25rem solid var(--corDestaque);
     border-radius: 1rem 1rem 0 0;
-    margin-left: 1rem;
-    margin-right: 1rem;
+
 }
 
 .footerGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .grid-item h3 {
@@ -51,5 +50,4 @@
     .footerGrid {
         grid-template-columns: repeat(4, 1fr);
     }
-
 }

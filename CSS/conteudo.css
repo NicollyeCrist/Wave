@@ -21,3 +21,82 @@ body {
     color: var(--corBrancoPerola);
     line-height: 1.4;
 }
+
+.containerCont {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--corRoxoClaro);
+}
+
+.card {
+    background: var(--corBrancoPerola);
+    color: var(--corFundo);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.card a {
+    align-self: flex-start;
+    text-decoration: none;
+    color: var(--corAzulEscuro);
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.cardTesteConhecimentoContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    margin: auto auto;
+    max-width: 600px;
+    max-height: 300px;
+    grid-auto-rows: 1fr;    
+}
+
+.cardTesteConhecimento{
+    background: var(--corBrancoPerola);
+    color: var(--corFundo);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardTesteConhecimentoContainer a{
+    color: var(--corAzulEscuro);
+    font-weight: bold;
+    text-decoration: none;
+}

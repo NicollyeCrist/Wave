@@ -6,29 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MesoMinds</title>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <link rel="stylesheet" type="text/css" href="../component/componentCSS/footer.css">
-    <link rel="stylesheet" type="text/css" href="../component/componentCSS/navbarIndex.css">
+    <link rel="stylesheet" type="text/css" href="../components/footer.css">
+    <link rel="stylesheet" type="text/css" href="../components/header.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#">
-                    <span>LOGO</span>
-                    <span class="mesoName">Meso</span>
-                    <span class="mindsName">Minds</span>
-                </a>
-            </div>
-            <a href="#">Conteúdos</a>
-            <a href="..\views\questoes.php">Questões</a>
-            <a href="#">Simulado</a>
-            <div class="loginButton">
-                <a href="#">Entrar</a>
-                <a href="#">Registrar-se</a>
-            </div>
-        </nav>
-    </header>
+    <?php include '../components/header.php' ?>
     <div class="ComeceAgoraArea">
         <h1>Comece a aprender matemática agora! Grátis!</h1>
         <a href="#">Comece a aprender agora mesmo!</a>
@@ -59,7 +42,6 @@
 
             <a href="#" class="profItem">
                 <div class="profImg">
-                    <!-- Aqui poderia ter uma imagem padrão, se quiser -->
                 </div>
                 <span class="profName">Em breve!</span>
             </a>
@@ -93,39 +75,7 @@
         </h1>
         <a href="#">Comece a aprender!</a>
     </div>
-
-
-
-    <footer class="footerContainer">
-        <div class="footerGrid">
-            <div class="grid-item">
-                <h3>
-                    <span class="mesoName">Meso</span>
-                    <span class="mindsName">Minds</span>
-                </h3>
-                <p>Plataforma dedicada ao ensino de matemática grátis!</p>
-            </div>
-            <div class="grid-item">
-                <h3>Recursos</h3>
-                <p><a href="#">Resolver questões</a></p>
-                <p><a href="#">Resolver simulados</a></p>
-                <p><a href="#">Aprender matemática</a></p>
-            </div>
-
-            <div class="grid-item">
-                <h3>Contato</h3>
-                <p><a href="#">Fale conosco</a></p>
-                <p><a href="#">Seja aluno</a></p>
-                <p><a href="#">Seja professor</a></p>
-            </div>
-
-            <div class="grid-item">
-                <h3>Suporte</h3>
-                <p><a href="#">Dúvidas</a></p>
-                <p><a href="#">Apoie o projeto</a></p>
-            </div>
-        </div>
-    </footer>
+    <?php include '..\components\footer.php'; ?>
 </body>
 
 </html>

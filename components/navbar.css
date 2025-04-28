@@ -1,0 +1,37 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.2rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+nav .logo {
+    margin-bottom: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.6rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.45rem;
+}
+
+.loginButton a {
+    background-color: var(--corRoxoClaro);
+    border-radius: 1.25rem;
+    padding: 0.3rem;
+    border: var(--corTercearia);
+    font-size: .6rem;
+}
+
+.loginButton a:first-child {
+    background-color: var(--corTercearia);
+    border-radius: 1.25rem;
+    padding: 0.3rem;
+    font-size:.6rem;
+}

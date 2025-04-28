@@ -1,0 +1,55 @@
+:root {
+    --corDestaque: #7F339A;
+    --corFundo: #170A1C;
+    --corTercearia: #52365C;
+    --corVerde: #1b4e0e;
+    --corBrancoPerola: #F0E6FF;
+    --corAzulClaro: #5995CE;
+    --corAzulEscuro: #297FBD;
+    --corRoxoClaro: #845AD7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footerContainer {
+    background: var(--corBrancoPerola);
+    color: black;
+    padding: 2rem 1rem;
+    border-top: 0.25rem solid var(--corDestaque);
+    border-radius: 1rem 1rem 0 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.footerGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.grid-item h3 {
+    color: var(--corVerde);
+    margin-bottom: 0.5rem;
+}
+
+.grid-item a,
+.grid-item p {
+    color: black;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.grid-item a:hover {
+    color: var(--corDestaque);
+}
+
+@media (min-width: 600px) {
+    .footerGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}

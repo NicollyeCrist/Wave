@@ -1,7 +1,7 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="#">
+            <a href="index.php">
                 <span>LOGO</span>
                 <span class="mesoName">Meso</span>
                 <span class="mindsName">Minds</span>
@@ -11,8 +11,7 @@
         <a href="..\views\questoes.php">Questões</a>
         <a href="#">Simulado</a>
         <div class="loginButton">
-            <a href="#">Entrar</a>
-            <a href="#">Registrar-se</a>
+            <a href="#">Cadastrar</a>
         </div>
     </nav>
 </header>

@@ -41,7 +41,7 @@
                         Ladrilhamento
                     </li>
                 </ul>
-                <a href="#">Ver conteúdo →</a>
+                <a href="conteudoGeometriaPlana.php">Ver conteúdo →</a>
             </div>
             <div class="card">
                 <h3>Estatística</h3>

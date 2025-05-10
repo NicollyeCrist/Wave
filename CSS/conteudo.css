@@ -17,9 +17,12 @@
 
 body {
     background-color: var(--corFundo);
-    font-family: sans-serif;
     color: var(--corBrancoPerola);
     line-height: 1.4;
+}
+
+main {
+    margin: 2vh;
 }
 
 .containerCont {
@@ -27,7 +30,8 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
-    background-color: var(--corRoxoClaro);
+    background-color: var(--corTercearia);
+    margin-bottom: 1rem;
 }
 
 .card {
@@ -50,6 +54,7 @@ body {
 }
 
 .card h3 {
+    color: var(--corAzulEscuro);
     margin-bottom: 0.75rem;
     font-size: 1.2rem;
 }
@@ -64,12 +69,21 @@ body {
 .card a {
     align-self: flex-start;
     text-decoration: none;
-    color: var(--corAzulEscuro);
+    color: var(--corVerde);
     font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 .card a:hover {
     text-decoration: underline;
+}
+
+.testeConhecimento{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .cardTesteConhecimentoContainer{
@@ -99,4 +113,8 @@ body {
     color: var(--corAzulEscuro);
     font-weight: bold;
     text-decoration: none;
+}
+
+.cardTesteConhecimentoContainer p{
+    font-size: .8rem;
 }

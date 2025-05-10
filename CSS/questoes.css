@@ -6,7 +6,7 @@
     --corBrancoPerola: #F0E6FF;
     --corAzulClaro: #4795E3;
     --corAzulEscuro: #297FBD;
-    --corRoxoClaro: #845AD7; 
+    --corRoxoClaro: #845AD7;
 }
 
 * {
@@ -19,66 +19,124 @@ body {
     background-color: var(--corFundo);
 }
 
-h1{
+main {
+    margin: 2vh 2vw;
+}
+
+h1 {
     color: var(--corBrancoPerola);
     margin-left: 3vh;
     margin-bottom: 2vh;
     margin-top: 4vh;
+    text-align: center;
 }
 
-.questContainer{
+.questContainer {
     display: flex;
-    justify-content: center;
-    text-align: left;
-    align-items: left;
     flex-direction: column;
     color: var(--corBrancoPerola);
+    align-items: stretch;
+    text-align: center;
+
 }
 
-.questContainer h2{
+.questContainer h2 {
     margin-left: 3vh;
-    margin-bottom: 3vh;
-    margin-top: 4vh;
+    margin-bottom: 2vh;
+    margin-top: 3vh;
+    font-size: 1.3rem;
 }
 
-.cardQuestoesContainer{
+.cardQuestoesContainer {
     display: flex;
-    justify-content: left;
-    text-align: left;
-    align-items: left;
-    gap: 45px;
-    margin-left: 2em;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    justify-content: flex-start;
 }
 
 .cardQuestoesAssuntoSimples,
 .cardQuestoesAssuntoEnem {
-    max-width: 45%; 
-    min-width: 300px; 
+    flex: 1 1 300px;
+    min-width: auto;
     height: fit-content;
-    border-radius: 20px;
+    border-radius: 1rem;
     background-color: var(--corBrancoPerola);
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 1rem;
 }
 
 .cardQuestoesAssuntoSimples h3,
-.cardQuestoesAssuntoEnem h3{
+.cardQuestoesAssuntoEnem h3 {
     text-align: center;
     color: var(--corVerde);
-    margin: 20px 0;
+    margin: 1rem 0;
+    font-size: 1.1rem;
 }
 
 .cardQuestoesAssuntoSimples a,
-.cardQuestoesAssuntoEnem a{
+.cardQuestoesAssuntoEnem a {
     text-decoration: none;
-    font-size: larger;
+    font-size: 1rem;
     color: var(--corFundo);
-    padding: 15px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
 }
 
 .cardQuestoesAssuntoSimples a:hover,
-.cardQuestoesAssuntoEnem a:hover{
+.cardQuestoesAssuntoEnem a:hover {
     color: var(--corDestaque);
+    background-color: #eee;
 }
 
+@media (min-width: 600px) {
+
+    .questContainer {
+        display: flex;
+        flex-direction: column;
+        color: var(--corBrancoPerola);
+        align-items: stretch;
+        text-align: center;
+        max-width: 50vh 50vw;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+
+    .questContainer {
+        display: flex;
+        flex-direction: column;
+        color: var(--corBrancoPerola);
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .questContainer h2 {
+        font-size: 2rem;
+    }
+
+    .cardQuestoesContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+    }
+
+    .cardQuestoesAssuntoSimples,
+    .cardQuestoesAssuntoEnem {
+        flex: 0 1 calc(40% - .1vw);
+        max-width: calc(40% - .1vw);
+        min-width: 400px;
+    }
+
+}

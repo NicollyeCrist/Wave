@@ -20,12 +20,24 @@ body{
     color: white;
 }
 
+main {
+    margin: 2vh;
+}
+
+.heroSection {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 2vh;
+}
+
 .ComeceAgoraArea {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem 1rem;
     text-align: center;
+    width: 50%; 
 }
 
 .ComeceAgoraArea h1 {
@@ -53,16 +65,12 @@ body{
     max-width: 50rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    width: 50%; 
 }
 
 .bannerArea img{
     width: 100%;
-}
-
-
-.bannerArea {
-    margin: 1rem;
-    text-align: center;
+    display: block; 
 }
 
 .profArea {

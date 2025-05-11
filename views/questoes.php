@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questões</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
     <link rel="stylesheet" type="text/css" href="../css/questoes.css">
     <link rel="stylesheet" type="text/css" href="../components/header.css">
     <link rel="stylesheet" type="text/css" href="../components/footer.css">
@@ -20,7 +21,7 @@
         $tituloPrincipal = "Funções";
         $tituloGrupo1 = "Quetões por nível";
         $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => 'index.php'],
+            ['texto' => 'Questões nível 1', 'href' => 'questoesFuncoesNivel1.php'],
             ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
             ['texto' => 'Questões nível 3', 'href' => '#nivel3']
         ];

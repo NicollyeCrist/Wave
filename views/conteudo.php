@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdos</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
     <link rel="stylesheet" type="text/css" href="../css/conteudo.css">
     <link rel="stylesheet" type="text/css" href="../components/footer.css">
     <link rel="stylesheet" type="text/css" href="../components/header.css">

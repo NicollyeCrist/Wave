@@ -1,29 +1,3 @@
-:root {
-    --corDestaque: #7F339A;
-    --corFundo: #170A1C;
-    --corTercearia: #52365C;
-    --corVerde: #1b4e0e;
-    --corBrancoPerola: #F0E6FF;
-    --corAzulClaro: #5995CE;
-    --corAzulEscuro: #297FBD;
-    --corRoxoClaro: #845AD7;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: var(--corFundo);
-    color: white;
-}
-
-main {
-    margin: 2vh;
-}
-
 .heroSection {
     display: flex; 
     justify-content: space-between; 

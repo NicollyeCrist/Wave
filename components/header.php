@@ -2,9 +2,7 @@
     <nav>
         <div class="logo">
             <a href="index.php">
-                <span>LOGO</span>
-                <span class="mesoName">Meso</span>
-                <span class="mindsName">Minds</span>
+                <img src="../imgs\android-chrome-512x512.png">
             </a>
         </div>
         <a href="conteudo.php">Conteúdos</a>

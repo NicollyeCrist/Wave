@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/conteudo.css">
     <link rel="stylesheet" type="text/css" href="../components/footer.css">
     <link rel="stylesheet" type="text/css" href="../components/header.css">
+    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <?php include '../components/header.php' ?>
+    <?php include_once '../components/header.php' ?>
     <h1>Conteúdos</h1>
     <h4>Os conteúdos são separados por ordem da BNCC</h4>
     <div class="containerCont">
@@ -275,7 +275,7 @@
         </a>
     </div>
     </div>
-    <?php include '..\components\footer.php'; ?>
+    <?php include_once '..\components\footer.php'; ?>
 </body>
 
 </html>

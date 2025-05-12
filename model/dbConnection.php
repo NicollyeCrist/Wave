@@ -1,14 +1,29 @@
 <?php
 
-$hostname = "localhost";
-$db = "mesominds";
-$user = "root";
-$pass = "";
+class DbConnection {
+    private static $instance;
 
-$mysqli = new mysqli($hostname, $user, $pass, $db);
+    private static $hostname = "localhost";
+    private static $db = "mesominds";
+    private static $user = "root";
+    private static $pass = "";
 
-if($mysqli->connect_errno){
-    echo "falha ao conectar:(".$mysqli->connect_errno .")" . $mysqli->connect_error;
-}else {
+    public static function getConn() {
+        if (!isset(self::$instance)) {
+            try {
+                self::$instance = new PDO(
+                    "mysql:host=" . self::$hostname . ";dbname=" . self::$db . ";charset=utf8",
+                    self::$user,
+                    self::$pass
+                );
+                self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                echo "Erro na conexão: " . $e->getMessage();
+                die();
+            }
+        }
+
+        return self::$instance;
+    }
 }
 ?>

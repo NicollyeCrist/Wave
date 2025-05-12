@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../components/header.php' ?>
+    <?php include_once '../components/header.php' ?>
     <main>
         <h1>
             Questões por assunto
@@ -104,7 +104,7 @@
         include '../components/questoesTemplate.php';
         ?>
     </main>
-    <?php include '..\components\footer.php'; ?>
+    <?php include_once '..\components\footer.php'; ?>
 </body>
 
 </html>

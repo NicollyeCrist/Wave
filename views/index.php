@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include '../components/header.php' ?>
+    <?php include_once '../components/header.php' ?>
 
     <div class="heroSection">
         <div class="ComeceAgoraArea">
@@ -79,7 +79,7 @@
         </h1>
         <a href="#">Comece a aprender!</a>
     </div>
-    <?php include '..\components\footer.php'; ?>
+    <?php include_once '..\components\footer.php'; ?>
 </body>
 
 </html>

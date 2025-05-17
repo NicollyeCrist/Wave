@@ -1,8 +1,8 @@
 .footerContainer {
-    background: var(--corBrancoPerola);
+    background: white;
     color: black;
     padding: 2rem 1rem;
-    border-top: 0.25rem solid var(--corDestaque);
+    border-top: 0.25rem solid var(--color-background-contrast);
     border-radius: 1rem 1rem 0 0;
 
 }

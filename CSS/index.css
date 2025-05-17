@@ -20,13 +20,13 @@
 }
 
 .ComeceAgoraArea a {
-    background-color: #298ADA;
+    background-color: var(--color-action);
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
     font-size: 1rem;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px var(--color-background-contrast);
     transition: transform .3s, opacity .3s;
 }
 
@@ -55,7 +55,7 @@
 .profArea h1 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: var(--corBrancoPerola);
+    color: white;
 }
 
 .profImgsContainer {
@@ -82,7 +82,7 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: var(--corBrancoPerola);
+    background: white;
     overflow: hidden;
     position: relative;
 }
@@ -94,7 +94,7 @@
 }
 
 .profName {
-    background: var(--corVerde);
+    background: var(--color-background);
     padding: 0.5rem 1rem;
     border-radius: 0.75rem;
     font-weight: bold;
@@ -121,13 +121,13 @@
 }
 
 .questContArea a {
-    background: #471e578e;
+    background: var(--color-Second);
     color: white;
     text-decoration: none;
     padding: 0.75rem;
     border-radius: 0.5rem;
     text-align: center;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px var(--color-background-contrast);
 }
 
 .questEnemeArea {
@@ -142,7 +142,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--corAzulEscuro);
+    background: var(--color-Thirt);
     color: white;
     text-decoration: none;
     padding: 2rem;
@@ -150,12 +150,12 @@
     text-align: center;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     height: 100%;
-    box-shadow: 3px 3px 1px var(--corTercearia)
+    box-shadow: 3px 3px 1px var(--color-background-contrast);
 }
 
 .CadasAgoraArea {
-    background: var(--corBrancoPerola);
-    color: var(--corVerde);
+    background: var(--color-background-contrast);
+    color: var(--color-su);
     border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
     padding: 3em;
     text-align: center;
@@ -168,10 +168,11 @@
 .CadasAgoraArea h1 {
     font-size: 1.6rem;
     margin-bottom: 2rem;
+    color: var(--color-sucess);
 }
 
 .CadasAgoraArea a {
-    background: var(--corDestaque);
+    background: var(--color-action);
     color: white;
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
@@ -181,40 +182,6 @@
 }
 
 @media (min-width: 600px) {
-    nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 0 1rem;
-        font-size: 1rem;
-    }
-
-    .loginButton a {
-        background-color: var(--corRoxoClaro);
-        border-radius: 0.8rem;
-        border: var(--corTercearia);
-        transition: all 0.1s ease;
-        display: inline-block;
-        padding: .3rem;
-        font-size: .8rem;
-        width: 8vh;
-    }
-
-    .loginButton a:hover {
-        opacity: .8;
-        transform: translateY(-2px);
-    }
-
-    .loginButton a:first-child {
-        background-color: var(--corTercearia);
-        border-radius: 0.8rem;
-        padding: .3rem;
-        font-size: .8rem;
-        width: 7vh;
-    }
 
     .ComeceAgoraArea {
         margin: 3rem auto;
@@ -247,7 +214,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--corAzulEscuro);
+        background: #191C4A;
         color: white;
         text-decoration: none;
         padding: 1rem;
@@ -255,7 +222,7 @@
         text-align: center;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
         height: 80%;
-        box-shadow: 3px 3px 1px var(--corTercearia);
+        box-shadow: 3px 3px 1px var(--color-background-contrast);
         font-size: 1.5rem;
     }
 }
@@ -291,25 +258,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: var(--corAzulEscuro);
+        background: #331B60;
         color: white;
         text-decoration: none;
         padding: 1rem;
         border-radius: 0.5rem;
         text-align: center;
-        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 1px 1px var(--color-background-contrast);
         height: 80%;
-        box-shadow: 3px 3px 1px var(--corTercearia);
         font-size: 1.5rem;
     }
 
     .CadasAgoraArea {
-        background: var(--corBrancoPerola);
-        color: var(--corVerde);
+        background: var(--color-background-contrast);
+        color: var(--color-sucess);
         border-radius: 0.8rem;
         padding: 3em;
         text-align: center;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        color: white;
     }
 }

@@ -1,6 +1,5 @@
 h1 {
     color: var(--corBrancoPerola);
-    margin-left: 3vh;
     margin-bottom: 2vh;
     margin-top: 4vh;
     text-align: center;
@@ -10,13 +9,13 @@ h1 {
     display: flex;
     flex-direction: column;
     color: var(--corBrancoPerola);
-    align-items: stretch;
+    align-items: center;
     text-align: center;
+    justify-content: center ;
 
 }
 
 .questContainer h2 {
-    margin-left: 3vh;
     margin-bottom: 2vh;
     margin-top: 3vh;
     font-size: 1.3rem;
@@ -26,8 +25,6 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
     justify-content: flex-start;
 }
 

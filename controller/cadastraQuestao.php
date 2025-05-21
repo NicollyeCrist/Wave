@@ -24,7 +24,7 @@ if ($enunciado && $idconteudo && $alternativas && $correta !== null) {
             $alternativaDao->create($idQuestao, $texto, $index == $correta);
         }
 
-        echo "Questão e alternativas cadastradas com sucesso!";
+        echo "Questão cadastradas com sucesso!";
     } catch (PDOException $e) {
         echo "Erro ao cadastrar questão: " . $e->getMessage();
     }

@@ -15,7 +15,7 @@ class ConteudoDao {
         $stmt->execute();
     }
 
-    public function readAll()
+    public function readAll(): array
     {
         $sql = 'SELECT * FROM conteudo';
 

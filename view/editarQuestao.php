@@ -13,7 +13,7 @@ $conteudos = $conteudoDao->readAll();
 </head>
 <body>
     <h1>Editar Questão #<?php echo $questao->getIdQuestao(); ?></h1>
-    <form action="../controller/atualizaQuestao.php" method="post">
+    <form action="../controller/AtualizaQuestao.php" method="post">
         <input type="hidden" name="idquestao" value="<?php echo $questao->getIdQuestao(); ?>">
 
         <label for="enunciado">Enunciado:</label><br>

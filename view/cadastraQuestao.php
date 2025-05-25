@@ -22,20 +22,22 @@ $conteudos = $dao->readAll();
       const div = document.createElement('div');
       div.innerHTML = `
     <label for="alternativa_${index}">Alternativa ${index + 1}:</label>
-    <input type="text" name="alternativas[]" id="alternativa_${index}" required>
+    <input type="text" name="alternativas[]" id="alternativa_${index}" required autofocus>
     <label>
       <input type="radio" name="correta" value="${index}" required> Correta
     </label>
     <br><br>
   `;
       container.appendChild(div);
+
+      document.getElementById(`alternativa_${index}`).focus();
     }
   </script>
 </head>
 
 <body>
   <h1>Cadastro de Questão</h1>
-  <form action="../controller/cadastraQuestao.php" method="post">
+  <form action="../controller/CadastraQuestao.php" method="post">
     <label for="enunciado">Enunciado:</label><br>
     <textarea id="enunciado" name="enunciado" rows="4" cols="50" required></textarea><br><br>
 

@@ -2,7 +2,7 @@
     <nav>
         <div class="logo">
             <a href="index.php">
-                <img src="../imgs\android-chrome-512x512.png">
+                <img src="../imgs/android-chrome-512x512.png">
             </a>
         </div>
         <a href="conteudo.php">Conteúdos</a>

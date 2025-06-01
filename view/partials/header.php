@@ -6,7 +6,7 @@
             </a>
         </div>
         <a href="conteudo.php">Conteúdos</a>
-        <a href="..\views\questoes.php">Questões</a>
+        <a href="..\view\questoes.php">Questões</a>
         <a href="#">Simulados</a>
         <div class="loginButton">
             <a href="#">Cadastrar</a>

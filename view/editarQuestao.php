@@ -1,9 +1,4 @@
-<?php
-require_once __DIR__ . '/../model/ConteudoDao.php';
 
-$conteudoDao = new ConteudoDao();
-$conteudos = $conteudoDao->readAll();
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

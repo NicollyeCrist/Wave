@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdos</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../css/conteudo.css">
-    <link rel="stylesheet" type="text/css" href="../components/footer.css">
-    <link rel="stylesheet" type="text/css" href="../components/header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/global.css">    <link rel="stylesheet" type="text/css" href="../css/conteudo.css">
+    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
+    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
 
 </head>
 
 <body>
-    <?php include_once '../components/header.php' ?>
+    <?php include_once '../view/partials/header.php' ?>
     <h1>Conteúdos</h1>
     <h4>Os conteúdos são separados por ordem da BNCC</h4>
     <div class="containerCont">
@@ -272,10 +271,9 @@
         </a>
         <a href="#">
             <p class="cardTesteConhecimento">Geometria espacial</p>
-        </a>
+        </a>        </div>
     </div>
-    </div>
-    <?php include_once '..\components\footer.php'; ?>
+    <?php include_once '../view/partials/footer.php'; ?>
 </body>
 
 </html>

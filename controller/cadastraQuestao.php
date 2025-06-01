@@ -9,9 +9,7 @@ class CadastraQuestao extends QuestaoController
     public function __construct()
     {
         parent::__construct();
-    }
-
-    public function create(): void
+    }    public function create(): void
     {
         $enunciado = filter_input(INPUT_POST, 'enunciado', FILTER_SANITIZE_STRING);
         $idconteudo = filter_input(INPUT_POST, 'idconteudo', FILTER_VALIDATE_INT);
@@ -37,6 +35,22 @@ class CadastraQuestao extends QuestaoController
         } else {
             echo "Dados inválidos.";
         }
+    }
+
+    public function edit(): void
+    {
+    }
+
+    public function update(): void
+    {
+    }
+
+    public function delete(): void
+    {
+    }
+
+    public function list(): void
+    {
     }
 }
 

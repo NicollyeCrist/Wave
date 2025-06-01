@@ -1,15 +1,4 @@
 <?php
-require_once __DIR__ . '/../model/QuestoesDao.php';
-require_once __DIR__ . '/../model/ConteudoDao.php';
-
-$dao = new QuestoesDao();
-$questoes = $dao->readAll();
-$conteudoDao = new ConteudoDao();
-$conteudos = $conteudoDao->readAll();
-$mapConteudos = [];
-foreach ($conteudos as $c) {
-    $mapConteudos[$c->getIdConteudo()] = $c->getTitulo();
-}
 $msg = $_GET['msg'] ?? '';
 ?>
 <!DOCTYPE html>

@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MesoMinds</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <link rel="stylesheet" type="text/css" href="../components/footer.css">
-    <link rel="stylesheet" type="text/css" href="../components/header.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/global.css">    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
+    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <?php include_once '../components/header.php' ?>
+    <?php include_once '../view/partials/header.php' ?>
 
     <div class="heroSection">
         <div class="ComeceAgoraArea">
@@ -71,15 +70,13 @@
                 <a href="#">Questões ENEM 2021</a>
             </div>
         </div>
-    </div>
-
-    <div class="CadasAgoraArea">
+    </div>    <div class="CadasAgoraArea">
         <h1>
             Comece a aprender agora!
         </h1>
         <a href="#">Comece a aprender!</a>
     </div>
-    <?php include_once '..\components\footer.php'; ?>
+    <?php include_once '../view/partials/footer.php'; ?>
 </body>
 
 </html>

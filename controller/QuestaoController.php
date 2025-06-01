@@ -4,8 +4,9 @@ require_once __DIR__ . '/../model/dbConnection.php';
 require_once __DIR__ . '/../model/Questoes.php';
 require_once __DIR__ . '/../model/QuestoesDao.php';
 require_once __DIR__ . '/../model/AlternativaDao.php';
+require_once __DIR__ . '/../model/ConteudoDao.php';
 
-class QuestaoController
+abstract class QuestaoController
 {
     protected QuestoesDao $dao;
 
@@ -14,30 +15,10 @@ class QuestaoController
         $this->dao = new QuestoesDao();
     }
 
-    public function list(): void
-    {
-        $questoes = $this->dao->readAll();
-        $mapConteudos = [];
-        foreach ((new ConteudoDao())->readAll() as $c) {
-            $mapConteudos[$c->getIdConteudo()] = $c->getTitulo();
-        }
-        header('Location: ../view/listarQuestoes.php');
-        exit;
-    }
+    abstract public function list(): void;
 
-    public function create(): void
-    {
-    }
-
-    public function edit(): void
-    {
-    }
-
-    public function update(): void
-    {
-    }
-
-    public function delete(): void
-    {
-    }
+    abstract public function create(): void;
+    abstract public function edit(): void;
+    abstract public function update(): void;
+    abstract public function delete(): void;
 }

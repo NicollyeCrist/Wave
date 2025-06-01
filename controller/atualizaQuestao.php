@@ -4,11 +4,13 @@ require_once __DIR__ . '/../model/QuestoesDao.php';
 require_once __DIR__ . '/../model/AlternativaDao.php';
 require_once __DIR__ . '/../model/Questoes.php';
 require_once __DIR__ . '/../model/dbConnection.php';
-class AtualizaQuestao extends QuestaoController{
+class AtualizaQuestao extends QuestaoController
+{
     public function __construct()
     {
         parent::__construct();
     }
+
     public function update(): void
     {
         $id = filter_input(INPUT_POST, 'idquestao', FILTER_VALIDATE_INT);
@@ -24,6 +26,22 @@ class AtualizaQuestao extends QuestaoController{
         } else {
             echo "Dados inválidos.";
         }
+    }
+
+    public function delete(): void
+    {
+    }
+
+    public function create(): void
+    {
+    }
+
+    public function edit(): void
+    {
+    }
+
+    public function list(): void
+    {
     }
 }
 

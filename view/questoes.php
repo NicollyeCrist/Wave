@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questões</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../css/questoes.css">
-    <link rel="stylesheet" type="text/css" href="../components/header.css">
-    <link rel="stylesheet" type="text/css" href="../components/footer.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/global.css">    <link rel="stylesheet" type="text/css" href="../css/questoes.css">
+    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
+    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
     <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <?php include_once '../components/header.php' ?>
+    <?php include_once '../view/partials/header.php' ?>
     <main>
         <h1>
             Questões por assunto
@@ -28,12 +27,11 @@
         ];
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
+            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],        ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
             ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../components/questoesTemplate.php';
+        include '../view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Conjuntos";
@@ -45,12 +43,11 @@
         ];
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
+            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],        ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
             ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../components/questoesTemplate.php';
+        include '../view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Frações";
@@ -63,11 +60,10 @@
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
             ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
-            ['texto' => 'ENEM 2022', 'href' => '#enem2022']
+            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../components/questoesTemplate.php';
+        include '../view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Porcentagem";
@@ -80,11 +76,10 @@
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
             ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
-            ['texto' => 'ENEM 2022', 'href' => '#enem2022']
+            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../components/questoesTemplate.php';
+        include '../view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Probabilidade";
@@ -97,14 +92,13 @@
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
             ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
-            ['texto' => 'ENEM 2022', 'href' => '#enem2022']
+            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../components/questoesTemplate.php';
+        include '../view/partials/questoesTemplate.php';
         ?>
     </main>
-    <?php include_once '..\components\footer.php'; ?>
+    <?php include_once '../view/partials/footer.php'; ?>
 </body>
 
 </html>

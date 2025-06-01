@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questões</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">    <link rel="stylesheet" type="text/css" href="../css/questoes.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/global.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/css/questoes.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/header.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/footer.css">
+    <link rel="icon" href="/mesominds/imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <?php include_once '../view/partials/header.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
     <main>
         <h1>
             Questões por assunto
@@ -31,7 +32,7 @@
             ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../view/partials/questoesTemplate.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Conjuntos";
@@ -47,7 +48,7 @@
             ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../view/partials/questoesTemplate.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Frações";
@@ -63,7 +64,7 @@
             ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../view/partials/questoesTemplate.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Porcentagem";
@@ -79,7 +80,7 @@
             ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../view/partials/questoesTemplate.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
         ?>
         <?php
         $tituloPrincipal = "Probabilidade";
@@ -95,10 +96,10 @@
             ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
-        include '../view/partials/questoesTemplate.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
         ?>
     </main>
-    <?php include_once '../view/partials/footer.php'; ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 
 </html>

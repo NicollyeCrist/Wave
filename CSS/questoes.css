@@ -1,5 +1,5 @@
 h1 {
-    color: var(--corBrancoPerola);
+    color: white;
     margin-bottom: 2vh;
     margin-top: 4vh;
     text-align: center;
@@ -8,11 +8,10 @@ h1 {
 .questContainer {
     display: flex;
     flex-direction: column;
-    color: var(--corBrancoPerola);
+    color: white;
     align-items: center;
     text-align: center;
     justify-content: center ;
-
 }
 
 .questContainer h2 {
@@ -34,7 +33,7 @@ h1 {
     min-width: auto;
     height: fit-content;
     border-radius: 1rem;
-    background-color: var(--corBrancoPerola);
+    background-color: var(--color-background-contrast);
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -43,7 +42,7 @@ h1 {
 .cardQuestoesAssuntoSimples h3,
 .cardQuestoesAssuntoEnem h3 {
     text-align: center;
-    color: var(--corVerde);
+    color: var(--color-sucess);
     margin: 1rem 0;
     font-size: 1.1rem;
 }
@@ -52,7 +51,7 @@ h1 {
 .cardQuestoesAssuntoEnem a {
     text-decoration: none;
     font-size: 1rem;
-    color: var(--corFundo);
+    color: var(--color-background);
     padding: 0.75rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
@@ -61,8 +60,9 @@ h1 {
 
 .cardQuestoesAssuntoSimples a:hover,
 .cardQuestoesAssuntoEnem a:hover {
-    color: var(--corDestaque);
-    background-color: #eee;
+    color: var(--color-sucess);
+    background-color: var(--color-Second);
+    box-shadow: 1px 1px 1px var(--color-sucess);
 }
 
 @media (min-width: 600px) {
@@ -70,7 +70,6 @@ h1 {
     .questContainer {
         display: flex;
         flex-direction: column;
-        color: var(--corBrancoPerola);
         align-items: stretch;
         text-align: center;
         max-width: 50vh 50vw;
@@ -84,7 +83,6 @@ h1 {
     .questContainer {
         display: flex;
         flex-direction: column;
-        color: var(--corBrancoPerola);
         align-items: center;
         text-align: center;
         justify-content: center;

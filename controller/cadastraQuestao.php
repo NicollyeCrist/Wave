@@ -11,15 +11,23 @@ class CadastraQuestao extends QuestaoController
         parent::__construct();
     }    public function create(): void
     {
-        $enunciado = filter_input(INPUT_POST, 'enunciado', FILTER_SANITIZE_STRING);
-        $idconteudo = filter_input(INPUT_POST, 'idconteudo', FILTER_VALIDATE_INT);
+        $enunciado = filter_input(INPUT_POST, 'enunciado', FILTER_SANITIZE_SPECIAL_CHARS);
+        $id_conteudo = filter_input(INPUT_POST, 'id_conteudo', FILTER_VALIDATE_INT);
         $alternativas = filter_input(INPUT_POST, 'alternativas', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         $correta = filter_input(INPUT_POST, 'correta', FILTER_VALIDATE_INT);
 
-        if ($enunciado && $idconteudo && $alternativas && $correta !== null) {
+        if (!isset($_POST['id_conteudo'])) {
+            die("Erro: Campo 'id_conteudo' não está presente no formulário");
+        }
+
+        if ($id_conteudo === false || $id_conteudo === null) {
+            die("Erro: ID do conteúdo inválido. Certifique-se de selecionar um conteúdo válido.");
+        }
+
+        if ($enunciado && $id_conteudo && $alternativas && $correta !== null) {
             $questao = new Questoes();
             $questao->setEnunciado($enunciado);
-            $questao->setIdConteudo($idconteudo);
+            $questao->setIdConteudo($id_conteudo);
 
             try {
                 $this->dao->create($questao);
@@ -28,12 +36,16 @@ class CadastraQuestao extends QuestaoController
                 foreach ($alternativas as $index => $texto) {
                     $alternativaDao->create($idQuestao, $texto, $index == $correta);
                 }
-                header('Location: ../view/listarQuestoes.php?msg=criada');
+                header('Location: ../controller/listarQuestoes.php?msg=criada');
             } catch (PDOException $e) {
                 echo "Erro: " . $e->getMessage();
             }
         } else {
-            echo "Dados inválidos.";
+            echo "Dados inválidos. Verifique:<br>";
+            if (!$enunciado) echo "- Enunciado não preenchido<br>";
+            if (!$id_conteudo) echo "- Conteúdo não selecionado<br>";
+            if (!$alternativas) echo "- Alternativas não preenchidas<br>";
+            if ($correta === null) echo "- Alternativa correta não selecionada<br>";
         }
     }
 

@@ -8,14 +8,16 @@ class ListarQuestoes extends QuestaoController
     {
         parent::__construct();
     }
-    public function list(): void{
-    $questoes = $this->dao->readAll();
+    public function list(): void
+    {
+        $questoes = $this->dao->readAll();
         $mapConteudos = [];
         foreach ((new ConteudoDao())->readAll() as $c) {
-            $mapConteudos[$c->getIdConteudo()] = $c->getTitulo();
+            $mapConteudos[$c->getId()] = $c->getTitulo();
         }
-        require __DIR__ . '/../view/listarQuestoes.php';
+        require  __DIR__ . '/../view/listarQuestoes.php';
     }
+
     public function create(): void
     {
     }
@@ -32,6 +34,3 @@ class ListarQuestoes extends QuestaoController
     {
     }
 }
-
-$ctrl = new ListarQuestoes();
-$ctrl->list();

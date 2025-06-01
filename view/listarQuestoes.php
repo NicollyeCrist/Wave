@@ -25,17 +25,20 @@ $msg = $_GET['msg'] ?? '';
         </tr>
         <?php foreach ($questoes as $q): ?>
             <tr>
-                <td><?php echo $q->getIdQuestao(); ?></td>
+                <td><?php echo $q->getId(); ?></td>
                 <td><?php echo htmlspecialchars($q->getEnunciado()); ?></td>
                 <td><?php echo htmlspecialchars($mapConteudos[$q->getIdConteudo()] ?? ''); ?></td>
                 <td>
-                    <a href="../controller/editarQuestao.php?id=<?php echo $q->getIdQuestao(); ?>">Editar</a> |
-                    <a href="../controller/deletaQuestao.php?id=<?php echo $q->getIdQuestao(); ?>" onclick="return confirm('Deseja excluir esta questão?');">Excluir</a>
+                    <a href="/mesominds/questoes/editar?id=<?php echo $q->getId(); ?>">Editar</a> |
+                    <a href="/mesominds/questoes/deletar?id=<?php echo $q->getId(); ?>" 
+                       onclick="return confirm('Tem certeza que deseja excluir esta questão?')">
+                        Excluir
+                    </a>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
 
-    <p><a href="cadastraQuestao.php">Cadastrar Nova Questão</a></p>
+    <p><a href="/mesominds/questoes/cadastrar">Cadastrar Nova Questão</a></p>
 </body>
 </html>

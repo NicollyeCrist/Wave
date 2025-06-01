@@ -1,17 +1,17 @@
 <?php
 
 class Conteudo {
-    private $idconteudo;
+    private $id;
     private $tituloConteudo;
-    private $decricao;
+    private $descricao;
     private $linkConteudo;
 
-    public function getIdConteudo() {
-        return $this->idconteudo;
+    public function getId() {
+        return $this->id;
     }
 
-    public function setIdConteudo($idconteudo) {
-        $this->idconteudo = $idconteudo;
+    public function setId($id) {
+        $this->id = $id;
     }
 
     public function getTitulo() {
@@ -22,16 +22,16 @@ class Conteudo {
         $this->tituloConteudo = $tituloConteudo;
     }
 
-    public function getDecricao() {
-        return $this->tituloConteudo;
+    public function getDescricao() {
+        return $this->descricao;
     }
 
-    public function setDecricao($decricao) {
-        $this->decricao = $decricao;
+    public function setDescricao($descricao) {
+        $this->descricao = $descricao;
     }
 
     public function getLinkConteudo() {
-        return $this->tituloConteudo;
+        return $this->linkConteudo;
     }
 
     public function setLinkConteudo($linkConteudo) {

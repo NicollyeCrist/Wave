@@ -6,18 +6,18 @@ require_once 'Conteudo.php';
 class ConteudoDao {
     
     public function create(Conteudo $conteudo) {
-        $sql = 'INSERT INTO conteudo (tituloConteudo, descricao, linkconteudo) VALUES (?,?,?)';
+        $sql = 'INSERT INTO conteudos (titulo, descricao, linkconteudo) VALUES (?,?,?)';
 
         $stmt = DbConnection::getConn()->prepare($sql);
         $stmt->bindValue(1, $conteudo->getTitulo());
-        $stmt->bindValue(2, $conteudo->getDecricao());
+        $stmt->bindValue(2, $conteudo->getDescricao());
         $stmt->bindValue(3, $conteudo->getLinkConteudo());
         $stmt->execute();
     }
 
     public function readAll(): array
     {
-        $sql = 'SELECT * FROM conteudo';
+        $sql = 'SELECT * FROM conteudos';
 
         $stmt = DbConnection::getConn()->prepare($sql);
         $stmt->execute();
@@ -27,10 +27,10 @@ class ConteudoDao {
         $lista = [];
         foreach ($result as $row) {
             $c = new Conteudo();
-            $c->setIdConteudo($row['idconteudo']);
-            $c->setTitulo($row['tituloConteudo']);
-            $c->setDecricao($row['descricao']);
-            $c->setLinkConteudo($row['linkConteudo']);
+            $c->setId($row['id']); // Correção: Alterado de setIdConteudo para setId
+            $c->setTitulo($row['titulo']);
+            $c->setDescricao($row['descricao']);
+            $c->setLinkConteudo($row['linkconteudo']);
             $lista[] = $c;
         }
 

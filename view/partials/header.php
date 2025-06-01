@@ -1,15 +1,15 @@
 <header>
     <nav>
         <div class="logo">
-            <a href="index.php">
-                <img src="../imgs/android-chrome-512x512.png">
+            <a href="/mesominds/"> 
+                <img src="/mesominds/imgs/android-chrome-512x512.png">
             </a>
         </div>
-        <a href="conteudo.php">Conteúdos</a>
-        <a href="..\view\questoes.php">Questões</a>
+        <a href="/mesominds/conteudos/listar">Conteúdos</a>
+        <a href="/mesominds/questoes">Questões</a>
         <a href="#">Simulados</a>
         <div class="loginButton">
-            <a href="login.php">Cadastrar</a>
+            <a href="/mesominds/login">Cadastrar</a>
         </div>
     </nav>
 </header>

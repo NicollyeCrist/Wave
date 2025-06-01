@@ -1,0 +1,6 @@
+<?php
+class Admin {
+    public function show(): void {
+        require_once __DIR__ . '/../view/admin.php';
+    }
+}

@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Administrativo - MesoMinds</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/admin.css">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/global.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/admin.css">
+    <link rel="icon" href="/mesominds/imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
     <div class="admin-container">
-        <!-- Header -->
         <header class="admin-header">
             <div class="header-content">
                 <h1>Painel Administrativo</h1>
@@ -23,11 +22,9 @@
             </div>
         </header>
 
-        <!-- Main Content -->
         <main class="admin-main">
             <div class="admin-grid">
                 
-                <!-- Questões Card -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Gestão de Questões</h2>
@@ -40,12 +37,11 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="../controller/listarQuestoes.php" class="btn btn-primary">Listar Questões</a>
-                        <a href="../controller/exibirCadastroQuestao.php" class="btn btn-success">Nova Questão</a>
+                        <a href="<?= '/mesominds/questoes/listar' ?>" class="btn btn-primary">Listar Questões</a>
+                        <a href="<?= '/mesominds/questoes/cadastrar' ?>" class="btn btn-success">Nova Questão</a>
                     </div>
                 </div>
 
-                <!-- Conteúdos Card -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Gestão de Conteúdos</h2>
@@ -58,12 +54,11 @@
                         </div>
                     </div>
                     <div class="card-actions">
-                        <a href="../view/listarConteudos.php" class="btn btn-primary">Listar Conteúdos</a>
-                        <a href="../view/cadastraConteudo.php" class="btn btn-success">Novo Conteúdo</a>
+                        <a href="/mesominds/conteudos/listar" class="btn btn-primary">Listar Conteúdos</a>
+                        <a href="/mesominds/conteudos/cadastrar" class="btn btn-success">Novo Conteúdo</a>
                     </div>
                 </div>
 
-                <!-- Simulados Card -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Gestão de Simulados</h2>
@@ -81,7 +76,6 @@
                     </div>
                 </div>
 
-                <!-- Dashboard Stats Card -->
                 <div class="admin-card stats-card">
                     <div class="card-header">
                         <h2>Estatísticas Gerais</h2>
@@ -105,7 +99,6 @@
                     </div>
                 </div>
 
-                <!-- Quick Actions Card -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Ações Rápidas</h2>
@@ -113,7 +106,7 @@
                     </div>
                     <div class="card-content">
                         <div class="quick-actions">
-                            <a href="../controller/exibirCadastroQuestao.php" class="quick-action">
+                            <a href="<?= '/mesominds/questoes/cadastrar' ?>" class="quick-action">
                                 <span>➕</span>
                                 <span>Adicionar Questão</span>
                             </a>
@@ -129,7 +122,6 @@
                     </div>
                 </div>
 
-                <!-- System Info Card -->
                 <div class="admin-card">
                     <div class="card-header">
                         <h2>Informações do Sistema</h2>
@@ -149,9 +141,7 @@
     </div>
 
     <script>
-        // Simular carregamento de estatísticas
         document.addEventListener('DOMContentLoaded', function() {
-            // Aqui você pode fazer requisições AJAX para buscar os dados reais
             setTimeout(() => {
                 document.getElementById('total-questoes').textContent = '45';
                 document.getElementById('total-conteudos').textContent = '12';

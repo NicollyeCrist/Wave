@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -37,10 +35,10 @@
     <textarea id="enunciado" name="enunciado" rows="4" cols="50" required></textarea><br><br>
 
     <label for="idconteudo">Conteúdo:</label><br>
-    <select name="idconteudo" id="idconteudo" required>
+    <select name="id_conteudo" id="idconteudo" required>
       <option value="">Selecione</option>
       <?php foreach ($conteudos as $conteudo): ?>
-        <option value="<?= $conteudo->getIdConteudo() ?>">
+        <option value="<?= $conteudo->getId() ?>">
           <?= htmlspecialchars($conteudo->getTitulo()) ?>
         </option>
       <?php endforeach; ?>

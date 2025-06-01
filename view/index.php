@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MesoMinds</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">    <link rel="stylesheet" type="text/css" href="../css/index.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/global.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/footer.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/header.css">
+    <link rel="icon" href="/mesominds/imgs/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <?php include_once '../view/partials/header.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
 
     <div class="heroSection">
         <div class="ComeceAgoraArea">
@@ -21,7 +22,7 @@
         </div>
 
         <div class="bannerArea">
-            <img src="../imgs/dinobanner.jpg">
+            <img src="/mesominds/imgs/dinobanner.jpg">
         </div>
     </div>
     <div class="profArea">
@@ -31,14 +32,14 @@
         <div class="profImgsContainer">
             <a href="#" class="profItem">
                 <div class="profImg">
-                    <img src="..\imgs\CLEIDIMENO.png" alt="Prof. Cleidi">
+                    <img src="/mesominds/imgs/CLEIDIMENO.png" alt="Prof. Cleidi">
                 </div>
                 <span class="profName">Prof. Cleidi</span>
             </a>
 
             <a href="#" class="profItem">
                 <div class="profImg">
-                    <img src="..\imgs\JACKSUMENOR.png" alt="Prof. Jackson">
+                    <img src="/mesominds/imgs/JACKSUMENOR.png" alt="Prof. Jackson">
                 </div>
                 <span class="profName">Prof. Jackson</span>
             </a>
@@ -70,13 +71,14 @@
                 <a href="#">Questões ENEM 2021</a>
             </div>
         </div>
-    </div>    <div class="CadasAgoraArea">
+    </div>
+    <div class="CadasAgoraArea">
         <h1>
             Comece a aprender agora!
         </h1>
         <a href="#">Comece a aprender!</a>
     </div>
-    <?php include_once '../view/partials/footer.php'; ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 
 </html>

@@ -1,14 +1,14 @@
 <?php
 
 class Questoes{
-    private $idquestao, $enunciado, $idconteudo;
+    private $id, $enunciado, $id_conteudo, $id_questao;
 
-    public function getIdQuestao() {
-        return $this->idquestao;
+    public function getId() {
+        return $this->id;
     }
 
-    public function setIdQuestao($idquestao) {
-        $this->idquestao = $idquestao;
+    public function setId($id) {
+        $this->id = $id;
     }
 
     public function getEnunciado() {
@@ -20,11 +20,15 @@ class Questoes{
     }
 
     public function getIdConteudo() {
-        return $this->idconteudo;
+        return $this->id_conteudo;
     }
 
-    public function setIdConteudo($idconteudo) {
-        $this->idconteudo = $idconteudo;
+    public function setIdConteudo($id_conteudo) {
+        $this->id_conteudo = $id_conteudo;
+    }
+    
+    public function getIdQuestao() {
+        return $this->id_questao;
     }
 }
 

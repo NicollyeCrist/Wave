@@ -14,11 +14,32 @@ class DeletaQuestao extends QuestaoController
     public function delete(): void
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        if ($id) {
-            $this->dao->delete($id);
-            header('Location: ../view/listarQuestoes.php?msg=deletada');
+        
+        if ($id !== false && $id !== null) {
+            try {
+                $conn = DbConnection::getConn();
+                
+                // Inicia transação apenas se não houver uma ativa
+                if (!$conn->inTransaction()) {
+                    $conn->beginTransaction();
+                }
+                
+                $alternativaDao = new AlternativaDao();
+                $alternativaDao->deleteByQuestaoId($id);
+                $this->dao->delete($id);
+                
+                $conn->commit();
+                header('Location: /mesominds/questoes/listar?msg=deletada');
+                exit;
+            } catch (PDOException $e) {
+                if ($conn->inTransaction()) {
+                    $conn->rollBack();
+                }
+                echo "Erro ao deletar questão: " . $e->getMessage();
+            }
         } else {
-            echo "ID inválido.";
+            header('Location: /mesominds/questoes/listar?msg=erro');
+            exit;
         }
     }
     public function create(): void
@@ -37,5 +58,3 @@ class DeletaQuestao extends QuestaoController
     {
     }
 }
-$crtl = new DeletaQuestao();
-$crtl->delete();

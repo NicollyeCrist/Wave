@@ -5,25 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conteúdos</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">    <link rel="stylesheet" type="text/css" href="../css/conteudo.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
-    <link rel="icon" href="../imgs/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/global.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/css/conteudo.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/footer.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/header.css">
+    <link rel="icon" href="/mesominds/imgs/favicon.ico" type="image/x-icon">
 
 </head>
 
 <body>
-    <?php include_once '../view/partials/header.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
     <h1>Conteúdos</h1>
     <h4>Os conteúdos são separados por ordem da BNCC</h4>
     <div class="containerCont">
         <div class="primeiroEM">
-            <h2>Ensino médio 1° ano</h2>
+            <h1>Ensino médio 1° ano</h1>
             <p>Os estudantes exploram Geometria Plana (relações métricas, áreas e transformações), Estatística
                 Descritiva (gráficos, médias e desvio-padrão), Interpretação de Gráficos, Função Afim (modelagem e
                 progressão aritmética) e Função Quadrática (vértices e aplicações práticas).</p>
             <div class="card">
-                <h3>Geometria plana</h3>
+                <h2>Geometria plana</h2>
                 <p>A geometria plana investiga figuras e propriedades em um plano bidimensional — pontos, retas e
                     polígonos “sobre” essa superfície. Originada na Grécia Antiga, foi formalizada por Euclides de
                     Alexandria em Os Elementos, por isso também é chamada geometria euclidiana.</p>
@@ -43,10 +44,10 @@
                         Ladrilhamento
                     </li>
                 </ul>
-                <a href="conteudoGeometriaPlana.php">Ver conteúdo →</a>
+                <a href="/mesominds/conteudos">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Estatística</h3>
+                <h2>Estatística</h2>
                 <p>A estatística é o ramo da matemática que coleta, organiza e interpreta dados para extrair informações
                     relevantes. Divide-se em estatística descritiva — que sumariza e apresenta os dados (médias,
                     gráficos e tabelas) — e estatística inferencial — que usa amostras para estimar ou testar hipóteses
@@ -61,7 +62,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Gráficos</h3>
+                <h2>Gráficos</h2>
                 <p>Gráficos convertem dados tabulados em representações visuais, tornando padrões e tendências mais
                     fáceis de identificar — especialmente quando lidamos com grandes volumes de informação ou séries
                     temporais.</p>
@@ -73,7 +74,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Função Afim</h3>
+                <h2>Função Afim</h2>
                 <p>Uma função relaciona duas ou mais grandezas, permitindo modelar fenômenos naturais. Seu estudo
                     abrange a parte geral (conceitos e propriedades fundamentais) e a parte específica (tipos de
                     funções, como polinomiais e exponenciais).</p>
@@ -86,7 +87,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Função Quadrática</h3>
+                <h2>Função Quadrática</h2>
                 <p>Construir modelos empregando as funções polinomiais de 1º ou 2º graus, para resolver problemas em
                     contextos diversos, com ou sem apoio de tecnologias digitais.</p>
                 <ul>
@@ -99,13 +100,13 @@
             </div>
         </div>
         <div class="segundoEM">
-            <h2>Ensino médio 2° ano</h2>
+            <h1>Ensino médio 2° ano</h1>
             <p> Avançam para Funções Exponencial (crescimento/decay e PG), Função Logarítmica (interpretação em
                 contextos científicos e financeiros), Educação Financeira (juros, inflação e orçamento), Análise
                 Combinatória (PFC, arranjos, combinações e permutações), Probabilidade (eventos e espaço amostral) e
                 Pensamento Computacional.</p>
             <div class="card">
-                <h3>Função exponencial</h3>
+                <h2>Função exponencial</h2>
                 <p>A função exponencial é um tipo especial de função matemático que mapeia cada número real xx para
                     axax, onde a base aa é um número real positivo diferente de 1. Seu domínio é todo o conjunto dos
                     números reais RR e seu contradomínio são todos os números reais positivos {y∈R∣y>0}</p>
@@ -116,7 +117,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Função logarítmica</h3>
+                <h2>Função logarítmica</h2>
                 <p>Resolver e elaborar problemas com funções logarítmicas nos quais seja necessário compreender e
                     interpretar a variação das grandezas envolvidas, em contextos como os de abalos sísmicos, pH,
                     radioatividade, Matemática Financeira, entre outros.</p>
@@ -127,7 +128,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Educação financeira</h3>
+                <h2>Educação financeira</h2>
                 <p>A BNCC recomenda integrar a educação financeira ao ensino médio por meio de cinco competências
                     matemáticas essenciais — 1) comparação e representação de juros simples e compostos, 2) uso de
                     planilhas para orçamento familiar, 3) interpretação de índices como inflação e IDH, 4) análise de
@@ -144,7 +145,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Análise combinatória</h3>
+                <h2>Análise combinatória</h2>
                 <p>Estuda e desenvolve técnicas de contagens para resolver diversas situações do nosso cotidiano. Para
                     resolver situações que envolvem análise combinatória, é bastante comum utilizar o princípio
                     fundamental da contagem (PFC). Existem casos de agrupamentos estudados na análise combinatória que
@@ -156,7 +157,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Probabilidade</h3>
+                <h2>Probabilidade</h2>
                 <p>Probabilidade mede a chance de um evento ocorrer em situações aleatórias, variando de 0 (impossível)
                     a 1 (certo), e calcula-se dividindo o número de casos favoráveis pelo número total de casos
                     possíveis.</p>
@@ -169,7 +170,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Pensamento computacional</h3>
+                <h2>Pensamento computacional</h2>
                 <p>Investigar e registrar, por meio de um fluxograma, quando possível, um algoritmo que resolve um
                     problema.</p>
                 <ul>
@@ -180,12 +181,12 @@
             </div>
         </div>
         <div class="terceiroEM">
-            <h2>Ensino médio 3° ano</h2>
+            <h1>Ensino médio 3° ano</h1>
             <p>Aprofundam em Trigonometria (leis dos senos e cossenos), Geometria Plana Avançada (projeções), Grandezas
                 e Medidas (SI, volume e massa), Geometria Espacial (poliedros e volumes) e Sistemas Lineares (métodos de
                 solução para múltiplas incógnitas).</p>
             <div class="card">
-                <h3>Trigonometria do ensino médio</h3>
+                <h2>Trigonometria do ensino médio</h2>
                 <p>Aplicar as relações métricas, incluindo as leis do seno e do cosseno ou as noções de congruência e
                     semelhança, para resolver e elaborar problemas que envolvem triângulos, em variados contextos.</p>
                 <ul>
@@ -196,7 +197,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Geometria plana</h3>
+                <h2>Geometria plana</h2>
                 <p>A geometria plana investiga figuras e propriedades em um plano bidimensional — pontos, retas e
                     polígonos “sobre” essa superfície. Originada na Grécia Antiga, foi formalizada por Euclides de
                     Alexandria em Os Elementos, por isso também é chamada geometria euclidiana.</p>
@@ -206,7 +207,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Grandezas e medidas</h3>
+                <h2>Grandezas e medidas</h2>
                 <p>As unidades de medida quantificam grandezas físicas (massa, comprimento, tempo etc.) segundo padrões
                     do Sistema Internacional de Unidades (SI), que define sete unidades básicas (metro, quilograma,
                     segundo, ampere, kelvin, mol e candela) e suas derivadas, permitindo comparações consistentes e
@@ -220,7 +221,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Geometria plana</h3>
+                <h2>Geometria plana</h2>
                 <p>A geometria espacial estuda figuras tridimensionais — como poliedros e corpos redondos — que compõem
                     nosso mundo em três dimensões, permitindo analisar relações de faces, arestas, vértices e
                     propriedades volumétricas e de área superficial desses sólidos.</p>
@@ -238,7 +239,7 @@
                 <a href="#">Ver conteúdo →</a>
             </div>
             <div class="card">
-                <h3>Sistemas lineares</h3>
+                <h2>Sistemas lineares</h2>
                 <p>Sistemas lineares são conjuntos de duas ou mais equações envolvendo incógnitas que aparecem apenas em
                     grau 1; soluções são conjuntos de valores que satisfazem todas as equações simultaneamente. Para
                     resolvê-los, aplicam-se métodos como adição, igualação e substituição (úteis em 2×2), além de
@@ -273,7 +274,7 @@
             <p class="cardTesteConhecimento">Geometria espacial</p>
         </a>        </div>
     </div>
-    <?php include_once '../view/partials/footer.php'; ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 
 </html>

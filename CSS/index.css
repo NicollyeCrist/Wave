@@ -154,7 +154,7 @@
 
 .CadasAgoraArea {
     background: var(--color-background-contrast);
-    color: var(--color-su);
+    color: var(--color-sucess);
     border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
     padding: 3em;
     text-align: center;
@@ -162,16 +162,18 @@
     margin-bottom: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
+    border: 1px solid var(--color-background);
+    box-shadow: 1px 1px 1px var(--color-background);
 }
 
 .CadasAgoraArea h1 {
     font-size: 1.6rem;
     margin-bottom: 2rem;
-    color: var(--color-sucess);
+    color: white;
 }
 
 .CadasAgoraArea a {
-    background: var(--color-action);
+    background: #0a7700;
     color: white;
     padding: 0.75rem 1.25rem;
     border-radius: 0.5rem;
@@ -231,56 +233,5 @@
         text-align: center;
         height: 80%;
         font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .ComeceAgoraArea {
-        max-width: 800px;
-    }
-
-    .profImgsContainer {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-    }
-
-    .CadasAgoraArea {
-        padding: 3rem 2rem;
-    }
-
-    .bannerArea {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        max-width: 50rem;
-        margin: 0 auto;
-        padding: 1rem;
-    }
-
-    .questEnemeArea a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        text-decoration: none;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        text-align: center;
-        height: 80%;
-    }
-
-    .CadasAgoraArea {
-        background: var(--color-background-contrast);
-        color: var(--color-sucess);
-        border-radius: 0.8rem;
-        padding: 3em;
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        color: white;
     }
 }

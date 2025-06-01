@@ -9,7 +9,7 @@
         </div>
         <div class="grid-item">
             <h3>Recursos</h3>
-            <p><a href="#">Resolver questões</a></p>
+            <p><a href="/mesominds/questoes">Resolver questões</a></p>
             <p><a href="#">Resolver simulados</a></p>
             <p><a href="#">Aprender matemática</a></p>
         </div>

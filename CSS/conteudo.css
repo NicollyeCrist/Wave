@@ -3,13 +3,12 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
-    background-color: var(--corTercearia);
     margin-bottom: 1rem;
 }
 
 .card {
-    background: var(--corBrancoPerola);
-    color: var(--corFundo);
+    background-color: var(--color-background-contrast);
+    color: white;
     border-radius: 0.75rem;
     padding: 1.5rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -19,6 +18,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    border: 1px solid var(--color-background);
 }
 
 .card:hover {
@@ -26,23 +26,32 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card h3 {
-    color: var(--corAzulEscuro);
+.card h2 {
+    color: var(--color-sucess);
     margin-bottom: 0.75rem;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
+h1 {
+    color: var(--color-sucess);
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
+    font-family: 'Oswald', Arial, sans-serif;
 }
 
 .card p {
     flex-grow: 1;
     margin-bottom: 1rem;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     line-height: 1.4;
+    font-family: "Roboto";
 }
 
 .card a {
     align-self: flex-start;
     text-decoration: none;
-    color: var(--corVerde);
+    color: var(--color-action);
     font-weight: bold;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -53,13 +62,20 @@
     text-decoration: underline;
 }
 
-.testeConhecimento{
+.card li::marker {
+    color: var(--color-sucess)
+}
+
+.testeConhecimento {
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
 }
 
-.cardTesteConhecimentoContainer{
+.cardTesteConhecimentoContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
@@ -67,12 +83,13 @@
     margin: auto auto;
     max-width: 600px;
     max-height: 300px;
-    grid-auto-rows: 1fr;    
+    grid-auto-rows: 1fr;
+
 }
 
-.cardTesteConhecimento{
-    background: var(--corBrancoPerola);
-    color: var(--corFundo);
+.cardTesteConhecimento {
+    background: var(--color-background-contrast);
+    color: white;
     border-radius: 0.75rem;
     padding: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -80,14 +97,17 @@
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--color-background);
+    box-shadow: 1px 0px  var(--color-background);
+
 }
 
-.cardTesteConhecimentoContainer a{
-    color: var(--corAzulEscuro);
+.cardTesteConhecimentoContainer a {
+    color: white;
     font-weight: bold;
     text-decoration: none;
 }
 
-.cardTesteConhecimentoContainer p{
+.cardTesteConhecimentoContainer p {
     font-size: .8rem;
 }

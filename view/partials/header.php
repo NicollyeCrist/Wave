@@ -5,7 +5,7 @@
                 <img src="/mesominds/imgs/android-chrome-512x512.png">
             </a>
         </div>
-        <a href="/mesominds/conteudos/listar">Conteúdos</a>
+        <a href="/mesominds/conteudos">Conteúdos</a>
         <a href="/mesominds/questoes">Questões</a>
         <a href="#">Simulados</a>
         <div class="loginButton">

@@ -16,6 +16,8 @@ $router->get('/questoes/deletar', 'DeletaQuestao', 'delete');
 $router->get('/pagina-sobre', 'sobre.php', '', true); 
 $router->get('/pagina-ajuda', 'ajuda.php', '', true); 
 $router->get('/questoes', 'questoes.php', '', true);
+$router->get('/conteudos', 'conteudo.php', '', true);
+
 
 $router->post('/questoes/criar', 'CadastraQuestao', 'create');
 $router->post('/questoes/atualizar', 'AtualizaQuestao', 'update');

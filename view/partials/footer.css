@@ -1,9 +1,8 @@
 .footerContainer {
-    background: white;
+    background: var(--color-background-contrast);
     color: black;
     padding: 2vw 1vh;
-    border-top: 0.25rem solid var(--color-background-contrast);
-    border-radius: 1rem 1rem 0 0;
+    border-top: 0.25rem solid var(--color-background);
 
 }
 
@@ -19,7 +18,7 @@
 }
 
 .footerContainer h3{
-    color: var(--color-Second)
+    color: var(--color-action)
 }
 
 .mindsName{
@@ -28,7 +27,7 @@
 
 .grid-item a,
 .grid-item p {
-    color: black;
+    color: white;
     text-decoration: none;
     margin-bottom: 0.5rem;
 }

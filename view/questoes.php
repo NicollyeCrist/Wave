@@ -22,13 +22,14 @@
         $tituloPrincipal = "Funções";
         $tituloGrupo1 = "Quetões por nível";
         $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => 'questoesFuncoesNivel1.php'],
+            ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes'],
             ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
             ['texto' => 'Questões nível 3', 'href' => '#nivel3']
         ];
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],        ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
+            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
+            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
             ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 
@@ -38,13 +39,14 @@
         $tituloPrincipal = "Conjuntos";
         $tituloGrupo1 = "Quetões por nível";
         $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => '#nivel1'],
+            ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes'],
             ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
             ['texto' => 'Questões nível 3', 'href' => '#nivel3']
         ];
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],        ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
+            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
+            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
             ['texto' => 'ENEM 2022', 'href' => '#enem2022']
         ];
 

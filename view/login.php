@@ -34,6 +34,9 @@
             </div>
 
             <button type="submit" class="login-btn">Entrar</button>
+            <div class="forget-password-container">
+                <span>Esqueceu a senha?</span> <a href="#" class="recovery-link">Recupere aqui</a>
+            </div>
 
             <div class="register-link-container">
                 <span>Não tem uma conta?</span> <a href="register.php" class="register-link">Registre-se</a>

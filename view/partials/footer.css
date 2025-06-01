@@ -1,7 +1,7 @@
 .footerContainer {
     background: white;
     color: black;
-    padding: 2rem 1rem;
+    padding: 2vw 1vh;
     border-top: 0.25rem solid var(--color-background-contrast);
     border-radius: 1rem 1rem 0 0;
 
@@ -13,9 +13,17 @@
     gap: 0.5rem;
 }
 
-.grid-item h3 {
-    color: var(--corVerde);
+.mesoName {
+    color: green;
     margin-bottom: 0.5rem;
+}
+
+.footerContainer h3{
+    color: var(--color-Second)
+}
+
+.mindsName{
+    color: blue;
 }
 
 .grid-item a,
@@ -26,7 +34,7 @@
 }
 
 .grid-item a:hover {
-    color: var(--corDestaque);
+    color: var(--color-action);
 }
 
 @media (min-width: 600px) {

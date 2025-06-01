@@ -9,7 +9,7 @@
         <a href="..\view\questoes.php">Questões</a>
         <a href="#">Simulados</a>
         <div class="loginButton">
-            <a href="#">Cadastrar</a>
+            <a href="login.php">Cadastrar</a>
         </div>
     </nav>
 </header>

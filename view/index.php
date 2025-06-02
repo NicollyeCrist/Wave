@@ -16,13 +16,11 @@
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
 
     <div class="heroSection">
+        <div class="bannerArea">
+        </div>
         <div class="ComeceAgoraArea">
             <h1>Comece a aprender matemática agora! Grátis!</h1>
             <a href="#">Comece a aprender agora mesmo!</a>
-        </div>
-
-        <div class="bannerArea">
-            <img src="/mesominds/imgs/dinobanner.jpg">
         </div>
     </div>
     <div class="profArea">

@@ -113,7 +113,6 @@
 
     .register-container {
         min-height: calc(100vh - 120px);
-        margin-bottom: 5vh;
         background-color: var(--color-background);
     }
 

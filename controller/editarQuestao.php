@@ -14,7 +14,12 @@ class EditarQuestao extends QuestaoController
     public function edit(): void
     {
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        
+
+        if (!$id) {
+            echo "ID inválido ou não fornecido.";
+            exit;
+        }
+
         $questao = $this->dao->readById($id);
         if (!$questao) {
             echo "Questão não encontrada.";

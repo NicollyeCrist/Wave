@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - MesoMinds</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/login.css"> 
-    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/global.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/login.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/header.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/footer.css">
 </head>
 
 <body>
-    <?php include_once '../view/partials/header.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
     <div class="login-container">
         <div class="logo-area">
             <div class="logoImg">
-                <img src="../imgs/android-chrome-512x512.png" alt="MesoMinds Logo">
+                <img src="/mesominds/imgs/android-chrome-512x512.png" alt="MesoMinds Logo">
             </div>
         </div>
 
-        <form class="login-form" method="POST" action="../controller/login_controller.php">
+        <form class="login-form" method="POST" action="/mesominds/controller/login_controller.php">
             <h2 class="login-title">Login</h2>
 
             <div class="form-group">
@@ -39,12 +39,11 @@
             </div>
 
             <div class="register-link-container">
-                <span>Não tem uma conta?</span> <a href="register.php" class="register-link">Registre-se</a>
+                <span>Não tem uma conta?</span> <a href="/mesominds/register" class="register-link">Registre-se</a>
             </div>
         </form>
     </div>
-    <?php include_once '../view/partials/footer.php' ?>
-
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 
 </html>

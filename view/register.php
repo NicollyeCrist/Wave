@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro - MesoMinds</title>
-    <link rel="stylesheet" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="../CSS/register.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/header.css">
-    <link rel="stylesheet" type="text/css" href="../view/partials/footer.css">
+    <link rel="stylesheet" href="/mesominds/CSS/global.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/register.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/header.css">
+    <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/footer.css">
     <style>
 
     </style>
 </head>
 
 <body>
-    <?php include_once '../view/partials/header.php' ?>
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
     <div class="register-container">
         <div class="logo-area">
             <div class="logoImg">
-                <img src="../imgs/android-chrome-512x512.png">
+                <img src="/mesominds/imgs/android-chrome-512x512.png">
             </div>
         </div>
 
-        <form class="register-form" method="POST" action="../controller/registerController.php">
+        <form class="register-form" method="POST" action="/mesominds/controller/registerController.php">
             <h2 class="register-title">Registro</h2>
 
             <div class="form-group">
@@ -64,8 +63,7 @@
             <button type="submit" class="register-btn">Registrar-se</button>
         </form>
     </div>
-    <?php include_once '../view/partials/footer.php' ?>
-
+    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 
 </html>

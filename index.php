@@ -3,10 +3,8 @@ require_once __DIR__ . '/router/Router.php';
 
 $router = new Router();
 
-// Admin route should be first
-$router->get('/', 'index.php', '', true); // carrega view/admin.php diretamente
+$router->get('/', 'index.php', '', true); 
 
-// Other routes
 $router->get('/questoes/listar', 'ListarQuestoes', 'list');
 $router->get('/questoes/cadastrar', 'ExibirCadastroQuestao', 'show');
 $router->get('/questoes/editar', 'EditarQuestao', 'edit');
@@ -17,6 +15,8 @@ $router->get('/pagina-sobre', 'sobre.php', '', true);
 $router->get('/pagina-ajuda', 'ajuda.php', '', true); 
 $router->get('/questoes', 'questoes.php', '', true);
 $router->get('/conteudos', 'conteudo.php', '', true);
+$router->get('/login', 'login.php', '', true);
+$router->get('/register', 'register.php', '', true);
 
 
 $router->post('/questoes/criar', 'CadastraQuestao', 'create');

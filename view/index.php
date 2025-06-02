@@ -53,7 +53,7 @@
     </div>
 
     <div class="questoesContainer">
-        <h2>Teste seu conhecimento!</h2>
+        <h1>Teste seu conhecimento</h1>
         <h4>Principais conteúdos ENEM</h4>
         <div class="questoesContent">
             <div class="questContArea">

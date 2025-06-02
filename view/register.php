@@ -27,6 +27,16 @@
             <h2 class="register-title">Registro</h2>
 
             <div class="form-group">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-input" name="nome" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Telefone</label>
+                <input type="tel" class="form-input" name="telefone" required>
+            </div>
+
+            <div class="form-group">
                 <label class="form-label">E-mail</label>
                 <input type="email" class="form-input" name="email" required>
             </div>

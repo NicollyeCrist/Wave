@@ -3,6 +3,8 @@ USE mesominds;
 
 CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
     email VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL,
     tipo_usuario ENUM('professor','aluno') NOT NULL,
@@ -48,3 +50,16 @@ CREATE TABLE IF NOT EXISTS simulado_questao (
     FOREIGN KEY (id_simulado) REFERENCES simulados(id),
     FOREIGN KEY (id_questao) REFERENCES questoes(id)
 );
+
+CREATE TABLE IF NOT EXISTS turmas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS turma_usuario (
+    id_turma INT NOT NULL,
+    id_usuario INT NOT NULL,
+    FOREIGN KEY (id_turma) REFERENCES turmas(id),
+)

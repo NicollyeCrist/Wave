@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <form class="login-form" method="POST" action="/mesominds/controller/login_controller.php">
+        <form class="login-form" method="POST" action="/mesominds/controller/LoginController.php">
             <h2 class="login-title">Login</h2>
 
             <div class="form-group">

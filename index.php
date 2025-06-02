@@ -17,6 +17,8 @@ $router->get('/questoes', 'questoes.php', '', true);
 $router->get('/conteudos', 'conteudo.php', '', true);
 $router->get('/login', 'login.php', '', true);
 $router->get('/register', 'register.php', '', true);
+$router->get('/profile', 'profile.php', '', true);
+
 
 
 $router->post('/questoes/criar', 'CadastraQuestao', 'create');

@@ -18,6 +18,7 @@ $router->get('/conteudos', 'conteudo.php', '', true);
 $router->get('/login', 'login.php', '', true);
 $router->get('/register', 'register.php', '', true);
 $router->get('/profile', 'profile.php', '', true);
+$router->get('/logout', 'logout.php', '', true);
 
 $router->get('/turmas', 'ListarTurmas', 'list');
 $router->get('/turmas/criar', 'CriarTurma', 'show');

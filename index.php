@@ -20,7 +20,7 @@ $router->get('/register', 'register.php', '', true);
 $router->get('/profile', 'profile.php', '', true);
 
 $router->get('/turmas', 'ListarTurmas', 'list');
-$router->get('/turmas/cadastrar', 'CriarTurma', 'show');
+$router->get('/turmas/criar', 'CriarTurma', 'show');
 $router->get('/turmas/editar', 'EditarTurma', 'edit');
 $router->get('/turmas/detalhes', 'GerenciarTurma', 'detalhes');
 

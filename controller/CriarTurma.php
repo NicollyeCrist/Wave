@@ -41,7 +41,7 @@ class CriarTurma extends TurmaController
 
         if (empty($nome)) {
             $_SESSION['error'] = 'Nome da turma é obrigatório.';
-            header('Location: /mesominds/turmas/cadastrar');
+            header('Location: /mesominds/turmas/criar');
             exit;
         }
 

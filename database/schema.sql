@@ -61,5 +61,7 @@ CREATE TABLE IF NOT EXISTS turmas (
 CREATE TABLE IF NOT EXISTS turma_usuario (
     id_turma INT NOT NULL,
     id_usuario INT NOT NULL,
+    PRIMARY KEY (id_turma, id_usuario),
     FOREIGN KEY (id_turma) REFERENCES turmas(id),
-)
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);

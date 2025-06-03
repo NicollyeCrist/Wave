@@ -16,7 +16,6 @@
     session_start();
     include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; 
     
-    // Verifica se o usuário está logado
     if (!isset($_SESSION['usuario'])) {
         header('Location: /login');
         exit;
@@ -71,6 +70,7 @@
                 <div class="action-buttons">
                     <a href="/questoes" class="btn btn-primary">Questões</a>
                     <a href="/conteudos" class="btn btn-secondary">Conteúdos</a>
+                    <a href="/mesominds/turmas" class="btn btn-secondary">Turmas</a>
                     <a href="/mesominds/controller/logout.php" class="btn btn-danger">Sair</a>
                 </div>
             </div>            <?php if ($usuario['tipo_usuario'] === 'professor'): ?>

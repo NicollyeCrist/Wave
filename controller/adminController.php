@@ -6,16 +6,21 @@ require_once __DIR__ . '/../model/Conteudo.php';
 require_once __DIR__ . '/../model/ConteudoDao.php';
 require_once __DIR__ . '/../model/Disciplina.php';
 require_once __DIR__ . '/../model/DisciplinaDao.php';
+require_once __DIR__ . '/../model/Questoes.php';
+require_once __DIR__ . '/../model/QuestoesDao.php';
+
 
 abstract class AdminController {
     protected AdminDao $adminDao;
     protected ConteudoDao $ConteudoDao;
     protected DisciplinaDao $DisciplinaDao;
+    protected QuestoesDao $QuestoesDao;
 
     public function __construct() {
         $this->adminDao = new AdminDao();
         $this->ConteudoDao = new ConteudoDao();
         $this->DisciplinaDao = new DisciplinaDao();
+        $this->QuestoesDao = new QuestoesDao();
     }
 
     protected function isAdminAuthenticated(): bool {

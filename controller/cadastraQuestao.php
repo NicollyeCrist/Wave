@@ -1,27 +1,56 @@
 <?php
-require_once __DIR__ . '/QuestaoController.php';
+require_once __DIR__ . '/adminController.php';
 require_once __DIR__ . '/../model/QuestoesDao.php';
 require_once __DIR__ . '/../model/AlternativaDao.php';
 require_once __DIR__ . '/../model/Questoes.php';
 require_once __DIR__ . '/../model/dbConnection.php';
-class CadastraQuestao extends QuestaoController
+class CadastraQuestao extends AdminController
 {
+    public function show(): void
+    {
+        session_start();
+
+        if (!$this->isAdminAuthenticated()) {
+            $this->redirect('/admin/login');
+        }
+        
+        try {
+            $conteudos = $this->ConteudoDao->readAll();
+            
+            $data = ['conteudos' => $conteudos];
+            $this->render('CadastraQuestao', $data);
+        } catch (Exception $e) {
+            error_log("CadastraQuestao::show() - Erro: " . $e->getMessage());
+            $this->setMessage('Erro ao carregar formulário: ' . $e->getMessage(), 'error');
+            $this->render('CadastraQuestao', ['conteudos' => []]);
+        }
+    }
     public function __construct()
     {
         parent::__construct();
     }    public function create(): void
     {
+        session_start();
+        
+        if (!$this->isAdminAuthenticated()) {
+            $this->redirect('/admin/login');
+        }
+
         $enunciado = filter_input(INPUT_POST, 'enunciado', FILTER_SANITIZE_SPECIAL_CHARS);
         $id_conteudo = filter_input(INPUT_POST, 'id_conteudo', FILTER_VALIDATE_INT);
         $alternativas = filter_input(INPUT_POST, 'alternativas', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         $correta = filter_input(INPUT_POST, 'correta', FILTER_VALIDATE_INT);
 
         if (!isset($_POST['id_conteudo'])) {
-            die("Erro: Campo 'id_conteudo' não está presente no formulário");
+            $this->setMessage("Erro: Campo 'id_conteudo' não está presente no formulário", 'error');
+            $this->redirect('/questoes/cadastrar');
+            return;
         }
 
         if ($id_conteudo === false || $id_conteudo === null) {
-            die("Erro: ID do conteúdo inválido. Certifique-se de selecionar um conteúdo válido.");
+            $this->setMessage("Erro: ID do conteúdo inválido. Certifique-se de selecionar um conteúdo válido.", 'error');
+            $this->redirect('/questoes/cadastrar');
+            return;
         }
 
         if ($enunciado && $id_conteudo && $alternativas && $correta !== null) {
@@ -30,22 +59,31 @@ class CadastraQuestao extends QuestaoController
             $questao->setIdConteudo($id_conteudo);
 
             try {
-                $this->dao->create($questao);
+                $questoesDao = new QuestoesDao();
+                $questoesDao->create($questao);
                 $idQuestao = DbConnection::getConn()->lastInsertId();
+                
                 $alternativaDao = new AlternativaDao();
                 foreach ($alternativas as $index => $texto) {
                     $alternativaDao->create($idQuestao, $texto, $index == $correta);
                 }
-                header('Location: ../controller/listarQuestoes.php?msg=criada');
+                
+                $this->setMessage('Questão cadastrada com sucesso!', 'success');
+                $this->redirect('/mesominds/questoes/listar');
             } catch (PDOException $e) {
-                echo "Erro: " . $e->getMessage();
+                error_log("Erro ao cadastrar questão: " . $e->getMessage());
+                $this->setMessage('Erro ao cadastrar questão: ' . $e->getMessage(), 'error');
+                $this->redirect('/questoes/cadastrar');
             }
         } else {
-            echo "Dados inválidos. Verifique:<br>";
-            if (!$enunciado) echo "- Enunciado não preenchido<br>";
-            if (!$id_conteudo) echo "- Conteúdo não selecionado<br>";
-            if (!$alternativas) echo "- Alternativas não preenchidas<br>";
-            if ($correta === null) echo "- Alternativa correta não selecionada<br>";
+            $errors = [];
+            if (!$enunciado) $errors[] = "Enunciado não preenchido";
+            if (!$id_conteudo) $errors[] = "Conteúdo não selecionado";
+            if (!$alternativas) $errors[] = "Alternativas não preenchidas";
+            if ($correta === null) $errors[] = "Alternativa correta não selecionada";
+            
+            $this->setMessage('Dados inválidos: ' . implode(', ', $errors), 'error');
+            $this->redirect('/questoes/cadastrar');
         }
     }
 
@@ -55,19 +93,12 @@ class CadastraQuestao extends QuestaoController
 
     public function update(): void
     {
-    }
-
-    public function delete(): void
+    }    public function delete(): void
     {
     }
 
     public function list(): void
     {
     }
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $ctrl = new CadastraQuestao();
-    $ctrl->create();
 }
 ?>

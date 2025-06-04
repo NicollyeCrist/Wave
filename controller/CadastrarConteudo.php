@@ -7,7 +7,8 @@ class CadastrarConteudo extends AdminController
     {
         parent::__construct();
 
-    }    public function show(): void
+    }
+    public function show(): void
     {
         session_start();
 
@@ -28,7 +29,8 @@ class CadastrarConteudo extends AdminController
             $this->setMessage('Erro ao carregar formulário: ' . $e->getMessage(), 'error');
             $this->render('admin/cadastrarConteudo', ['disciplinas' => []]);
         }
-    }    public function create(): void
+    }
+    public function create(): void
     {
         session_start();
 
@@ -43,7 +45,8 @@ class CadastrarConteudo extends AdminController
         try {
             $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_SPECIAL_CHARS);
             $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
-            $idDisciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_VALIDATE_INT);            $links = [];
+            $idDisciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_VALIDATE_INT);
+            $links = [];
             $linksArray = $_POST['links'] ?? [];
 
             foreach ($linksArray as $link) {
@@ -59,13 +62,15 @@ class CadastrarConteudo extends AdminController
                 $conteudo->setIdDisciplina($idDisciplina);
                 $conteudo->setLinks($links);
 
-                $resultado = $this->ConteudoDao->create($conteudo);                if ($resultado) {
+                $resultado = $this->ConteudoDao->create($conteudo);
+                if ($resultado) {
                     $this->setMessage("Conteúdo cadastrado com sucesso!", "success");
                     $this->redirect('/admin/conteudos');
                 } else {
                     $this->setMessage("Erro ao cadastrar conteúdo.", "error");
                     $this->redirect('/admin/conteudos/cadastrar');
-                }            } else {
+                }
+            } else {
                 $this->setMessage("Dados inválidos. Verifique o título e a disciplina.", "error");
                 $this->redirect('/admin/conteudos/cadastrar');
             }

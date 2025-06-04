@@ -30,7 +30,7 @@
 
 <body>
   <h1>Cadastro de Questão</h1>
-  <form action="../controller/CadastraQuestao.php" method="post">
+  <form action="/mesominds/questoes/criar" method="post">
     <label for="enunciado">Enunciado:</label><br>
     <textarea id="enunciado" name="enunciado" rows="4" cols="50" required></textarea><br><br>
 

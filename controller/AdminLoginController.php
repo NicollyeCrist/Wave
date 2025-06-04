@@ -7,7 +7,6 @@ class AdminLoginController extends AdminController {
     public function show(): void {
         session_start();
         
-        // Se já está logado, redirecionar para dashboard
         if ($this->isAdminAuthenticated()) {
             $this->redirect('/admin/dashboard');
         }

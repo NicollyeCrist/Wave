@@ -1,31 +1,38 @@
 <?php
-require_once __DIR__ . '/QuestaoController.php';
+require_once __DIR__ . '/adminController.php';
 require_once __DIR__ . '/../model/QuestoesDao.php';
 require_once __DIR__ . '/../model/AlternativaDao.php';
 require_once __DIR__ . '/../model/Questoes.php';
 require_once __DIR__ . '/../model/dbConnection.php';
-class AtualizaQuestao extends QuestaoController
+class AtualizaQuestao extends AdminController
 {
+    private $dao;
+
     public function __construct()
     {
         parent::__construct();
+        $this->dao = new QuestoesDao();
     }
 
-    public function update(): void
+    public function show(): void
     {
+        // This method is required by AdminController but not used for updates
+        if (!$this->isAdminAuthenticated()) {
+            header('Location: /mesominds/admin/login');
+            exit;
+        }
+    }    public function update(): void
+    {
+        if (!$this->isAdminAuthenticated()) {
+            header('Location: /mesominds/admin/login');
+            exit;
+        }
+
         $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
         $enunciado = filter_input(INPUT_POST, 'enunciado', FILTER_SANITIZE_SPECIAL_CHARS);
         $id_conteudo = filter_input(INPUT_POST, 'id_conteudo', FILTER_VALIDATE_INT);
         $alternativas = filter_input(INPUT_POST, 'alternativas', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         $correta = filter_input(INPUT_POST, 'correta'); // Recebe o id da alternativa correta como string
-
-        var_dump([
-            'id' => $id,
-            'enunciado' => $enunciado,
-            'id_conteudo' => $id_conteudo,
-            'alternativas' => $alternativas,
-            'correta' => $correta
-        ]);
 
         if ($id && $enunciado && $id_conteudo && $alternativas && $correta !== null) {
             try {
@@ -48,19 +55,26 @@ class AtualizaQuestao extends QuestaoController
                 }
 
                 $conn->commit();
-                header('Location: /mesominds/questoes/listar?msg=atualizada');
+                $this->setMessage('Questão atualizada com sucesso!', 'success');
+                header('Location: /mesominds/admin/questoes');
                 exit;
             } catch (PDOException $e) {
                 $conn->rollBack();
-                echo "Erro ao atualizar: " . $e->getMessage();
+                $this->setMessage('Erro ao atualizar questão: ' . $e->getMessage(), 'error');
+                header('Location: /mesominds/admin/questoes');
+                exit;
             }
         } else {
-            echo "Dados inválidos. Verifique:<br>";
-            if (!$id) echo "- ID não fornecido<br>";
-            if (!$enunciado) echo "- Enunciado não preenchido<br>";
-            if (!$id_conteudo) echo "- Conteúdo não selecionado<br>";
-            if (!$alternativas) echo "- Alternativas não preenchidas<br>";
-            if ($correta === null) echo "- Alternativa correta não selecionada<br>";
+            $errors = [];
+            if (!$id) $errors[] = 'ID não fornecido';
+            if (!$enunciado) $errors[] = 'Enunciado não preenchido';
+            if (!$id_conteudo) $errors[] = 'Conteúdo não selecionado';
+            if (!$alternativas) $errors[] = 'Alternativas não preenchidas';
+            if ($correta === null) $errors[] = 'Alternativa correta não selecionada';
+            
+            $this->setMessage('Dados inválidos: ' . implode(', ', $errors), 'error');
+            header('Location: /mesominds/admin/questoes');
+            exit;
         }
     }
 

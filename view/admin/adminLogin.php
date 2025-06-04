@@ -12,7 +12,7 @@
     <div class="login-container">
         <div class="login-box admin-login">
             <div class="login-header">
-                <h1>🔐 Área Administrativa</h1>
+                <h1> Área Administrativa</h1>
                 <p>Acesso restrito para administradores</p>
             </div>
 

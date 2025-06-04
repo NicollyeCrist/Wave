@@ -6,7 +6,7 @@ $router = new Router();
 $router->get('/', 'index.php', '', true); 
 
 $router->get('/questoes/listar', 'ListarQuestoes', 'list');
-$router->get('/questoes/cadastrar', 'ExibirCadastroQuestao', 'show');
+$router->get('/questoes/cadastrar', 'CadastraQuestao', 'show');
 $router->get('/questoes/editar', 'EditarQuestao', 'edit');
 $router->get('/questoes/deletar', 'DeletaQuestao', 'delete');
 

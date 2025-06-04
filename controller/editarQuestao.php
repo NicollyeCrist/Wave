@@ -1,10 +1,10 @@
 <?php
-require_once __DIR__ . '/QuestaoController.php';
+require_once __DIR__ . '/adminController.php';
 require_once __DIR__ . '/../model/QuestoesDao.php';
 require_once __DIR__ . '/../model/AlternativaDao.php';
 require_once __DIR__ . '/../model/ConteudoDao.php';
 
-class EditarQuestao extends QuestaoController
+class EditarQuestao extends AdminController
 {
     public function __construct()
     {
@@ -13,26 +13,43 @@ class EditarQuestao extends QuestaoController
 
     public function edit(): void
     {
+        session_start();
+        
+        if (!$this->isAdminAuthenticated()) {
+            $this->redirect('/admin/login');
+        }
+
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
         if (!$id) {
-            echo "ID inválido ou não fornecido.";
-            exit;
-        }
-
-        $questao = $this->dao->readById($id);
+            $this->setMessage("ID inválido ou não fornecido.", 'error');
+            $this->redirect('/questoes/listar');
+            return;
+        }        $questoesDao = new QuestoesDao();
+        $questao = $questoesDao->readById($id);
         if (!$questao) {
-            echo "Questão não encontrada.";
-            exit;
+            $this->setMessage("Questão não encontrada.", 'error');
+            $this->redirect('/questoes/listar');
+            return;
         }
 
         $alternativaDao = new AlternativaDao();
         $alternativas = $alternativaDao->readByQuestaoId($id);
 
-        $conteudoDao = new ConteudoDao();
-        $conteudos = $conteudoDao->readAll();
+        $conteudos = $this->ConteudoDao->readAll();
 
-        require __DIR__ . '/../view/editarQuestao.php';
+        $data = [
+            'questao' => $questao,
+            'alternativas' => $alternativas,
+            'conteudos' => $conteudos
+        ];
+
+        $this->render('editarQuestao', $data);
+    }
+
+    public function show(): void
+    {
+        $this->edit();
     }
     public function delete(): void
     {

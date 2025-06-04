@@ -34,6 +34,8 @@ $router->get('/admin/dashboard', 'AdminDashboardController', 'show');
 $router->get('/admin/login', 'AdminLoginController', 'show');
 $router->get('/admin/cadastrar', 'CadatraAdmin', 'show');
 $router->get('/admin/conteudos', 'AdminListarConteudos', 'show');
+$router->get('/admin/conteudos/cadastrar', 'CadastrarConteudo', 'show');
+$router->get('/admin/conteudos/editar', 'EditarConteudo', 'edit');
 $router->get('/admin/logout', 'AdminLoginController', 'logout');
 
 
@@ -53,6 +55,9 @@ $router->post('/turmas/sair', 'GerenciarTurma', 'sair');
 
 $router->post('/admin/login', 'AdminLoginController', 'login');
 $router->post('/admin/cadastrar', 'CadatraAdmin', 'create');
+$router->post('/admin/conteudos/cadastrar', 'CadastrarConteudo', 'create');
+$router->post('/admin/conteudos/atualizar', 'EditarConteudo', 'update');
+$router->post('/admin/conteudos/deletar', 'DeletarConteudo', 'delete');
 $router->post('/register', 'RegisterUserController', 'register');
 $router->post('/login', 'LoginController', 'login');
 

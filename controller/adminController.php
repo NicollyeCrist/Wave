@@ -24,23 +24,15 @@ abstract class AdminController {
 
     protected function isSuperAdmin(): bool {
         return $this->isAdminAuthenticated() && $_SESSION['admin']['cargo'] === 'Super Administrador';
-    }
-
-    protected function render(string $viewName, array $data = []): void {
+    }    protected function render(string $viewName, array $data = []): void {
         // Disponibilizar variáveis para a view
         extract($data);
         
-        $viewPath = __DIR__ . '/../view/admin/' . $viewName . '.php';
+        $viewPath = __DIR__ . '/../view/' . $viewName . '.php';
         if (file_exists($viewPath)) {
             require $viewPath;
         } else {
-            // Fallback para views na pasta principal
-            $viewPath = __DIR__ . '/../view/' . $viewName . '.php';
-            if (file_exists($viewPath)) {
-                require $viewPath;
-            } else {
-                throw new Exception("View não encontrada: " . $viewName);
-            }
+            throw new Exception("View não encontrada: " . $viewName);
         }
     }
 

@@ -8,26 +8,25 @@ class DeletarConteudo extends AdminController
     {
         parent::__construct();
 
-    }
-    public function delete(): void
+    }    public function delete(): void
     {
         session_start();
         
         if (!$this->isAdminAuthenticated()) {
-            $this->redirect('/login');
+            $this->redirect('/admin/login');
         }
 
         try {
             $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
             if (!$id) {
                 $this->setMessage('ID do conteúdo inválido.', 'error');
-                $this->redirect('/conteudos');
+                $this->redirect('/admin/conteudos');
             }
 
             $conteudo = $this->ConteudoDao->findById($id);
             if (!$conteudo) {
                 $this->setMessage('Conteúdo não encontrado.', 'error');
-                $this->redirect('/conteudos');
+                $this->redirect('/admin/conteudos');
             }
 
             $resultado = $this->ConteudoDao->delete($id);
@@ -38,20 +37,19 @@ class DeletarConteudo extends AdminController
                 $this->setMessage("Erro ao deletar conteúdo.", "error");
             }
         } catch (Exception $e) {
-            $this->setMessage("Erro interno: " . $e->getMessage(), "error");
-        }
+            $this->setMessage("Erro interno: " . $e->getMessage(), "error");        }
         
-        $this->redirect('/conteudos');
+        $this->redirect('/admin/conteudos');
     }
 
     public function list(): void
     {
-        $this->redirect('/conteudos');
+        $this->redirect('/admin/conteudos');
     }
 
     public function create(): void
     {
-        $this->redirect('/conteudos/cadastrar');
+        $this->redirect('/admin/conteudos/cadastrar');
     }
 
     public function show(): void

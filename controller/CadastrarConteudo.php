@@ -7,13 +7,12 @@ class CadastrarConteudo extends AdminController
     {
         parent::__construct();
 
-    }
-    public function show(): void
+    }    public function show(): void
     {
         session_start();
 
         if (!$this->isAdminAuthenticated()) {
-            $this->redirect('/login');
+            $this->redirect('/admin/login');
         }
         try {
             $disciplinas = $this->DisciplinaDao->readAll();
@@ -23,41 +22,33 @@ class CadastrarConteudo extends AdminController
             }
 
             $data = ['disciplinas' => $disciplinas];
-            $this->render('cadastraConteudo', $data);
+            $this->render('admin/cadastrarConteudo', $data);
         } catch (Exception $e) {
             error_log("CadastrarConteudo::show() - Erro: " . $e->getMessage());
             $this->setMessage('Erro ao carregar formulário: ' . $e->getMessage(), 'error');
-            $this->render('cadastraConteudo', ['disciplinas' => []]);
+            $this->render('admin/cadastrarConteudo', ['disciplinas' => []]);
         }
-    }
-
-    public function create(): void
+    }    public function create(): void
     {
         session_start();
 
         if (!$this->isAdminAuthenticated()) {
-            $this->redirect('/login');
+            $this->redirect('/admin/login');
         }
 
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/conteudos/cadastrar');
+            $this->redirect('/admin/conteudos/cadastrar');
         }
 
         try {
             $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_SPECIAL_CHARS);
             $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_SPECIAL_CHARS);
-            $idDisciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_VALIDATE_INT);
+            $idDisciplina = filter_input(INPUT_POST, 'id_disciplina', FILTER_VALIDATE_INT);            $links = [];
+            $linksArray = $_POST['links'] ?? [];
 
-            $links = [];
-            $linkTitulos = $_POST['link_titulo'] ?? [];
-            $linkUrls = $_POST['link_url'] ?? [];
-
-            for ($i = 0; $i < count($linkTitulos); $i++) {
-                if (!empty($linkTitulos[$i]) && !empty($linkUrls[$i])) {
-                    $links[] = [
-                        'titulo' => filter_var($linkTitulos[$i], FILTER_SANITIZE_SPECIAL_CHARS),
-                        'url' => filter_var($linkUrls[$i], FILTER_SANITIZE_URL)
-                    ];
+            foreach ($linksArray as $link) {
+                if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
+                    $links[] = filter_var($link, FILTER_SANITIZE_URL);
                 }
             }
 
@@ -68,21 +59,20 @@ class CadastrarConteudo extends AdminController
                 $conteudo->setIdDisciplina($idDisciplina);
                 $conteudo->setLinks($links);
 
-                $resultado = $this->ConteudoDao->create($conteudo);
-
-                if ($resultado) {
+                $resultado = $this->ConteudoDao->create($conteudo);                if ($resultado) {
                     $this->setMessage("Conteúdo cadastrado com sucesso!", "success");
+                    $this->redirect('/admin/conteudos');
                 } else {
                     $this->setMessage("Erro ao cadastrar conteúdo.", "error");
-                }
-            } else {
+                    $this->redirect('/admin/conteudos/cadastrar');
+                }            } else {
                 $this->setMessage("Dados inválidos. Verifique o título e a disciplina.", "error");
+                $this->redirect('/admin/conteudos/cadastrar');
             }
         } catch (Exception $e) {
             $this->setMessage("Erro interno: " . $e->getMessage(), "error");
+            $this->redirect('/admin/conteudos/cadastrar');
         }
-
-        $this->redirect('/conteudos/cadastrar');
     }
 
     public function list(): void

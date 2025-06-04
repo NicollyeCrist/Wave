@@ -285,7 +285,7 @@ if (session_status() === PHP_SESSION_NONE) {
             <div class="header-content">
                 <h1>Gerenciar Conteúdos</h1>
                 <div class="header-actions">
-                    <a href="/mesominds/conteudos/cadastrar" class="btn btn-primary">+ Novo Conteúdo</a>
+                    <a href="/mesominds/admin/conteudos/cadastrar" class="btn btn-primary">+ Novo Conteúdo</a>
                     <a href="/mesominds/admin/dashboard" class="btn btn-secondary">← Dashboard</a>
                 </div>
             </div>
@@ -356,7 +356,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             Ainda não há conteúdos cadastrados no sistema.
                         <?php endif; ?>
                     </p>
-                    <a href="/mesominds/conteudos/cadastrar" class="btn btn-primary">Cadastrar Primeiro Conteúdo</a>
+                    <a href="/mesominds/admin/conteudos/cadastrar" class="btn btn-primary">Cadastrar Primeiro Conteúdo</a>
                 </div>
             <?php else: ?>
                 <table>
@@ -400,12 +400,11 @@ if (session_status() === PHP_SESSION_NONE) {
                                     <?= $conteudo->getCreatedAt() ? date('d/m/Y H:i', strtotime($conteudo->getCreatedAt())) : 'N/A' ?>
                                 </td>
                                 <td>
-                                    <div class="action-buttons">
-                                        <a href="/mesominds/conteudos/editar?id=<?= $conteudo->getId() ?>" 
+                                    <div class="action-buttons">                                        <a href="/mesominds/admin/conteudos/editar?id=<?= $conteudo->getId() ?>" 
                                            class="btn btn-edit">
                                             ✏️ Editar
                                         </a>
-                                        <form method="post" action="/mesominds/conteudos/deletar" style="display: inline;">
+                                        <form method="post" action="/mesominds/admin/conteudos/deletar" style="display: inline;">
                                             <input type="hidden" name="id" value="<?= $conteudo->getId() ?>">
                                             <button type="submit" class="btn btn-delete"
                                                     onclick="return confirm('Tem certeza que deseja deletar o conteúdo \'<?= htmlspecialchars($conteudo->getTitulo()) ?>\'?')">

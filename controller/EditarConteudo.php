@@ -7,26 +7,25 @@ class EditarConteudo extends AdminController
     {
         parent::__construct();
 
-    }
-    public function edit(): void
+    }    public function edit(): void
     {
         session_start();
 
         if (!$this->isAdminAuthenticated()) {
-            $this->redirect('/login');
+            $this->redirect('/admin/login');
         }
 
         try {
             $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
             if (!$id) {
                 $this->setMessage('ID do conteúdo inválido.', 'error');
-                $this->redirect('/conteudos');
+                $this->redirect('/admin/conteudos');
             }
 
             $conteudo = $this->ConteudoDao->findById($id);
             if (!$conteudo) {
                 $this->setMessage('Conteúdo não encontrado.', 'error');
-                $this->redirect('/conteudos');
+                $this->redirect('/admin/conteudos');
             }
 
             $disciplinas = $this->DisciplinaDao->readAll();
@@ -36,10 +35,9 @@ class EditarConteudo extends AdminController
                 'disciplinas' => $disciplinas
             ];
 
-            $this->render('editarConteudo', $data);
+            $this->render('admin/editarConteudo', $data);
         } catch (Exception $e) {
-            $this->setMessage('Erro ao carregar conteúdo: ' . $e->getMessage(), 'error');
-            $this->redirect('/conteudos');
+            $this->setMessage('Erro ao carregar conteúdo: ' . $e->getMessage(), 'error');            $this->redirect('/admin/conteudos');
         }
     }
 
@@ -48,11 +46,11 @@ class EditarConteudo extends AdminController
         session_start();
 
         if (!$this->isAdminAuthenticated()) {
-            $this->redirect('/login');
+            $this->redirect('/admin/login');
         }
 
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            $this->redirect('/conteudos');
+            $this->redirect('/admin/conteudos');
         }
 
         try {
@@ -63,24 +61,18 @@ class EditarConteudo extends AdminController
 
             if (!$id) {
                 $this->setMessage('ID do conteúdo inválido.', 'error');
-                $this->redirect('/conteudos');
+                $this->redirect('/admin/conteudos');
             }
             $conteudo = $this->ConteudoDao->findById($id);
             if (!$conteudo) {
                 $this->setMessage('Conteúdo não encontrado.', 'error');
-                $this->redirect('/conteudos');
-            }
+                $this->redirect('/admin/conteudos');
+            }            $links = [];
+            $linksArray = $_POST['links'] ?? [];
 
-            $links = [];
-            $linkTitulos = $_POST['link_titulo'] ?? [];
-            $linkUrls = $_POST['link_url'] ?? [];
-
-            for ($i = 0; $i < count($linkTitulos); $i++) {
-                if (!empty($linkTitulos[$i]) && !empty($linkUrls[$i])) {
-                    $links[] = [
-                        'titulo' => filter_var($linkTitulos[$i], FILTER_SANITIZE_SPECIAL_CHARS),
-                        'url' => filter_var($linkUrls[$i], FILTER_SANITIZE_URL)
-                    ];
+            foreach ($linksArray as $link) {
+                if (!empty($link) && filter_var($link, FILTER_VALIDATE_URL)) {
+                    $links[] = filter_var($link, FILTER_SANITIZE_URL);
                 }
             }
 
@@ -90,21 +82,21 @@ class EditarConteudo extends AdminController
                 $conteudo->setIdDisciplina($idDisciplina);
                 $conteudo->setLinks($links);
 
-                $resultado = $this->ConteudoDao->update($conteudo);
-
-                if ($resultado) {
+                $resultado = $this->ConteudoDao->update($conteudo);                if ($resultado) {
                     $this->setMessage("Conteúdo atualizado com sucesso!", "success");
+                    $this->redirect('/admin/conteudos');
                 } else {
                     $this->setMessage("Erro ao atualizar conteúdo.", "error");
+                    $this->redirect("/admin/conteudos/editar?id=$id");
                 }
             } else {
                 $this->setMessage("Dados inválidos. Verifique o título e a disciplina.", "error");
+                $this->redirect("/admin/conteudos/editar?id=$id");
             }
         } catch (Exception $e) {
             $this->setMessage("Erro interno: " . $e->getMessage(), "error");
+            $this->redirect('/admin/conteudos');
         }
-
-        $this->redirect('/conteudos');
     }
 
     public function list(): void

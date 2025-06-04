@@ -29,7 +29,7 @@
                 ?>
             <?php endif; ?>
 
-            <form action="/mesominds/conteudos/cadastrar" method="post" class="form">
+            <form action="/mesominds/admin/conteudos/cadastrar" method="post" class="form">
                 <div class="form-group">
                     <label for="titulo">Título do Conteúdo:</label>
                     <input type="text" id="titulo" name="titulo" required placeholder="Ex: Teorema de Pitágoras">

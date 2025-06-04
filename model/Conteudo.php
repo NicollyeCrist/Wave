@@ -2,9 +2,10 @@
 
 class Conteudo {
     private $id;
-    private $tituloConteudo;
+    private $titulo;
     private $descricao;
-    private $linkConteudo;
+    private $idDisciplina;
+    private $links;
 
     public function getId() {
         return $this->id;
@@ -15,11 +16,11 @@ class Conteudo {
     }
 
     public function getTitulo() {
-        return $this->tituloConteudo;
+        return $this->titulo;
     }
 
-    public function setTitulo($tituloConteudo) {
-        $this->tituloConteudo = $tituloConteudo;
+    public function setTitulo($titulo) {
+        $this->titulo = $titulo;
     }
 
     public function getDescricao() {
@@ -30,12 +31,31 @@ class Conteudo {
         $this->descricao = $descricao;
     }
 
-    public function getLinkConteudo() {
-        return $this->linkConteudo;
+    public function getIdDisciplina() {
+        return $this->idDisciplina;
     }
 
-    public function setLinkConteudo($linkConteudo) {
-        $this->linkConteudo = $linkConteudo;
+    public function setIdDisciplina($idDisciplina) {
+        $this->idDisciplina = $idDisciplina;
+    }
+
+    public function getLinks() {
+        return $this->links;
+    }
+
+    public function setLinks($links) {
+        if (is_array($links)) {
+            $this->links = json_encode($links);
+        } else {
+            $this->links = $links;
+        }
+    }
+
+    public function getLinksArray() {
+        if (is_string($this->links)) {
+            return json_decode($this->links, true);
+        }
+        return $this->links;
     }
 }
 

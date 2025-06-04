@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS conteudos (
     id_disciplina INT NOT NULL,  
     links JSON,              
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_disciplina) REFERENCES topicos_matematica(id)
+    FOREIGN KEY (id_disciplina) REFERENCES disciplinas(id)
 );
 
     CREATE TABLE IF NOT EXISTS questoes (
@@ -76,3 +76,18 @@ CREATE TABLE IF NOT EXISTS turma_usuario (
     FOREIGN KEY (id_turma) REFERENCES turmas(id),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
+
+-- Inserir disciplinas padrão
+INSERT IGNORE INTO disciplinas (nome, descricao) VALUES 
+('Geometria Plana', 'Estudo de figuras geométricas em duas dimensões'),
+('Estatística', 'Coleta, organização e interpretação de dados'),
+('Função Afim', 'Funções de primeiro grau e suas aplicações'),
+('Função Quadrática', 'Funções de segundo grau e suas propriedades'),
+('Função Exponencial', 'Funções exponenciais e crescimento'),
+('Função Logarítmica', 'Funções logarítmicas e suas aplicações'),
+('Educação Financeira', 'Matemática aplicada às finanças pessoais'),
+('Análise Combinatória', 'Técnicas de contagem e agrupamentos'),
+('Probabilidade', 'Cálculo de chances e eventos aleatórios'),
+('Trigonometria', 'Relações trigonométricas e suas aplicações'),
+('Geometria Espacial', 'Estudo de figuras tridimensionais'),
+('Sistemas Lineares', 'Sistemas de equações lineares');

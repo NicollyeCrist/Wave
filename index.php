@@ -8,13 +8,16 @@ $router->get('/', 'index.php', '', true);
 $router->get('/questoes/listar', 'ListarQuestoes', 'list');
 $router->get('/questoes/cadastrar', 'ExibirCadastroQuestao', 'show');
 $router->get('/questoes/editar', 'EditarQuestao', 'edit');
-$router->get('/conteudos/listar', 'ListarConteudos', 'list');
-$router->get('/conteudos/cadastrar', 'CadastraConteudo', 'show');
 $router->get('/questoes/deletar', 'DeletaQuestao', 'delete');
+
+$router->get('/conteudos', 'ListarConteudos', 'list');
+$router->get('/conteudos/listar', 'ListarConteudos', 'list');
+$router->get('/conteudos/cadastrar', 'cadastraConteudo.php', '', true);
+
 $router->get('/pagina-sobre', 'sobre.php', '', true); 
 $router->get('/pagina-ajuda', 'ajuda.php', '', true); 
 $router->get('/questoes', 'questoes.php', '', true);
-$router->get('/conteudos', 'conteudo.php', '', true);
+$router->get('/conteudo', 'conteudo.php', '', true);
 $router->get('/login', 'login.php', '', true);
 $router->get('/register', 'register.php', '', true);
 $router->get('/profile', 'profile.php', '', true);
@@ -28,7 +31,8 @@ $router->get('/turmas/detalhes', 'GerenciarTurma', 'detalhes');
 $router->post('/questoes/criar', 'CadastraQuestao', 'create');
 $router->post('/questoes/atualizar', 'AtualizaQuestao', 'update');
 $router->post('/questoes/deletar', 'DeletaQuestao', 'delete');
-$router->post('/conteudos/criar', 'CadastraConteudo', 'create');
+
+$router->post('/conteudos/cadastrar', 'cadastraConteudo.php', '', true);
 
 $router->post('/turmas/criar', 'CriarTurma', 'create');
 $router->post('/turmas/atualizar', 'EditarTurma', 'update');

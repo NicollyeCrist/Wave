@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
+    <?php 
+    session_start();
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; 
+    ?>
     <div class="login-container">
         <div class="logo-area">
             <div class="logoImg">
@@ -22,6 +25,20 @@
 
         <form class="login-form" method="POST" action="/mesominds/controller/LoginController.php">
             <h2 class="login-title">Login</h2>
+
+            <?php if (isset($_SESSION['mensagem_erro'])): ?>
+                <div class="mensagem-erro">
+                    <?= htmlspecialchars($_SESSION['mensagem_erro']) ?>
+                </div>
+                <?php unset($_SESSION['mensagem_erro']); ?>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['mensagem_sucesso'])): ?>
+                <div class="mensagem-sucesso">
+                    <?= htmlspecialchars($_SESSION['mensagem_sucesso']) ?>
+                </div>
+                <?php unset($_SESSION['mensagem_sucesso']); ?>
+            <?php endif; ?>
 
             <div class="form-group">
                 <label for="email" class="form-label">E-mail</label>
@@ -43,6 +60,29 @@
             </div>
         </form>
     </div>
+
+    <style>
+        .mensagem-erro, .mensagem-sucesso {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .mensagem-erro {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .mensagem-sucesso {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 

@@ -5,6 +5,7 @@ class Conteudo {
     private $titulo;
     private $descricao;
     private $idDisciplina;
+    public $disciplinaNome;
     private $links;
 
     public function getId() {

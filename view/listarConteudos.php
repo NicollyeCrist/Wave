@@ -98,15 +98,21 @@
                                 </ul>
                             </div>
                         <?php endif; ?>
-                        
-                        <div class="card-actions">
+                          <div class="card-actions">
                             <a href="/mesominds/questoes?conteudo=<?= $conteudo->getId() ?>" class="btn-secondary">
                                 Ver Questões
                             </a>
                             <?php if ($_SESSION['usuario']['tipo_usuario'] === 'professor'): ?>
-                                <a href="/mesominds/conteudos/editar/<?= $conteudo->getId() ?>" class="btn-edit">
+                                <a href="/mesominds/conteudos/editar?id=<?= $conteudo->getId() ?>" class="btn-edit">
                                     Editar
                                 </a>
+                                <form method="post" action="/mesominds/conteudos/deletar" style="display: inline;">
+                                    <input type="hidden" name="id" value="<?= $conteudo->getId() ?>">
+                                    <button type="submit" class="btn-delete" 
+                                            onclick="return confirm('Tem certeza que deseja deletar este conteúdo?')">
+                                        Deletar
+                                    </button>
+                                </form>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -265,10 +271,23 @@
             border-radius: 4px;
             font-size: 0.875rem;
             transition: background 0.2s;
+        }        .btn-edit:hover {
+            background: #f57c00;
         }
 
-        .btn-edit:hover {
-            background: #f57c00;
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
         }
 
         .empty-state {

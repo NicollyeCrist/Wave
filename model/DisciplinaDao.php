@@ -1,12 +1,13 @@
 <?php
 
 require_once 'dbConnection.php'; 
+require_once 'Disciplina.php';
 
 class DisciplinaDao {
     
     public function readAll(): array
     {
-        $sql = 'SELECT * FROM disciplinas ORDER BY nome';
+        $sql = 'SELECT * FROM disciplinas';
 
         $stmt = DbConnection::getConn()->prepare($sql);
         $stmt->execute();

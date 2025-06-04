@@ -14,16 +14,16 @@
 
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
-    
+
     <div class="container">
         <div class="form-container">
             <h1>Cadastrar Novo Conteúdo</h1>
-            
+
             <?php if (isset($_SESSION['mensagem'])): ?>
                 <div class="mensagem <?= $_SESSION['tipo_mensagem'] ?>">
                     <?= htmlspecialchars($_SESSION['mensagem']) ?>
                 </div>
-                <?php 
+                <?php
                 unset($_SESSION['mensagem']);
                 unset($_SESSION['tipo_mensagem']);
                 ?>
@@ -39,16 +39,20 @@
                     <label for="descricao">Descrição:</label>
                     <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva o conteúdo..."></textarea>
                 </div>
-
                 <div class="form-group">
                     <label for="id_disciplina">Disciplina:</label>
+
                     <select id="id_disciplina" name="id_disciplina" required>
                         <option value="">Selecione uma disciplina</option>
-                        <?php foreach ($disciplinas as $disciplina): ?>
-                            <option value="<?= $disciplina['id'] ?>">
-                                <?= htmlspecialchars($disciplina['nome']) ?>
-                            </option>
-                        <?php endforeach; ?>
+                        <?php if (isset($disciplinas) && is_array($disciplinas) && count($disciplinas) > 0): ?>
+                            <?php foreach ($disciplinas as $disciplina): ?>
+                                <option value="<?= $disciplina['id'] ?>">
+                                    <?= htmlspecialchars($disciplina['nome']) ?>
+                                </option>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <option value="">Nenhuma disciplina encontrada</option>
+                        <?php endif; ?>
                     </select>
                 </div>
 
@@ -58,7 +62,8 @@
                         <div class="link-group">
                             <input type="text" name="link_titulo[]" placeholder="Título do link" class="link-titulo">
                             <input type="url" name="link_url[]" placeholder="https://exemplo.com" class="link-url">
-                            <button type="button" class="btn-remove-link" onclick="removeLink(this)" style="display: none;">Remover</button>
+                            <button type="button" class="btn-remove-link" onclick="removeLink(this)"
+                                style="display: none;">Remover</button>
                         </div>
                     </div>
                     <button type="button" id="add-link" class="btn-secondary">Adicionar Link</button>
@@ -75,7 +80,7 @@
     <script>
         let linkCount = 1;
 
-        document.getElementById('add-link').addEventListener('click', function() {
+        document.getElementById('add-link').addEventListener('click', function () {
             const container = document.getElementById('links-container');
             const newLinkGroup = document.createElement('div');
             newLinkGroup.className = 'link-group';
@@ -86,8 +91,7 @@
             `;
             container.appendChild(newLinkGroup);
             linkCount++;
-            
-            // Mostrar botão remover no primeiro link se houver mais de um
+
             if (linkCount > 1) {
                 const firstRemoveBtn = container.querySelector('.btn-remove-link');
                 if (firstRemoveBtn) {
@@ -100,8 +104,7 @@
             const linkGroup = button.parentElement;
             linkGroup.remove();
             linkCount--;
-            
-            // Esconder botão remover do primeiro link se só sobrou um
+
             if (linkCount === 1) {
                 const remainingRemoveBtn = document.querySelector('.btn-remove-link');
                 if (remainingRemoveBtn) {
@@ -118,14 +121,15 @@
             margin-bottom: 10px;
             align-items: center;
         }
-        
-        .link-titulo, .link-url {
+
+        .link-titulo,
+        .link-url {
             flex: 1;
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        
+
         .btn-remove-link {
             background: #dc3545;
             color: white;
@@ -135,23 +139,23 @@
             cursor: pointer;
             white-space: nowrap;
         }
-        
+
         .btn-remove-link:hover {
             background: #c82333;
         }
-        
+
         .mensagem {
             padding: 10px;
             margin-bottom: 20px;
             border-radius: 4px;
         }
-        
+
         .mensagem.success {
             background: #d4edda;
             color: #155724;
             border: 1px solid #c3e6cb;
         }
-        
+
         .mensagem.error {
             background: #f8d7da;
             color: #721c24;

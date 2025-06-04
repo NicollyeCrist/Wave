@@ -12,21 +12,32 @@ CREATE TABLE IF NOT EXISTS usuarios (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS disciplinas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL UNIQUE,
+    descricao TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE IF NOT EXISTS conteudos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     descricao TEXT,
-    linkconteudo TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id_disciplina INT NOT NULL,  
+    links JSON,              
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_disciplina) REFERENCES topicos_matematica(id)
 );
 
-CREATE TABLE IF NOT EXISTS questoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    enunciado TEXT NOT NULL,
-    id_conteudo INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_conteudo) REFERENCES conteudos (id)
-);
+    CREATE TABLE IF NOT EXISTS questoes (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        enunciado TEXT NOT NULL,
+        id_conteudo INT,
+        nivel_dificuldade ENUM('1', '2', '3') NOT NULL,
+        correcao TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (id_conteudo) REFERENCES conteudos (id)
+    );
 
 CREATE TABLE IF NOT EXISTS alternativas (
     id INT AUTO_INCREMENT PRIMARY KEY,

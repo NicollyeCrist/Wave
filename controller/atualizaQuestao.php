@@ -19,7 +19,6 @@ class AtualizaQuestao extends QuestaoController
         $alternativas = filter_input(INPUT_POST, 'alternativas', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
         $correta = filter_input(INPUT_POST, 'correta'); // Recebe o id da alternativa correta como string
 
-        // Debug
         var_dump([
             'id' => $id,
             'enunciado' => $enunciado,
@@ -33,21 +32,17 @@ class AtualizaQuestao extends QuestaoController
                 $conn = DbConnection::getConn();
                 $conn->beginTransaction();
 
-                // Update questão
                 $questao = new Questoes();
                 $questao->setId($id);
                 $questao->setEnunciado($enunciado);
                 $questao->setIdConteudo($id_conteudo);
                 $this->dao->update($questao);
 
-                // Update alternativas
                 $alternativaDao = new AlternativaDao();
                 foreach ($alternativas as $altId => $texto) {
                     if (strpos($altId, 'new_') === 0) {
-                        // Nova alternativa
                         $alternativaDao->create($id, $texto, $altId == $correta);
                     } else {
-                        // Alternativa existente
                         $alternativaDao->update((int)$altId, $texto, $altId == $correta);
                     }
                 }

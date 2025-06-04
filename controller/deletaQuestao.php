@@ -19,7 +19,6 @@ class DeletaQuestao extends QuestaoController
             try {
                 $conn = DbConnection::getConn();
                 
-                // Inicia transação apenas se não houver uma ativa
                 if (!$conn->inTransaction()) {
                     $conn->beginTransaction();
                 }

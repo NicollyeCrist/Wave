@@ -103,9 +103,8 @@
                     <div class="action-card">
                         <h3>📚 Gerenciar Conteúdos</h3>
                         <p>Criar, editar e organizar conteúdos educacionais</p>
-                        <div class="card-actions">
-                            <a href="/mesominds/conteudos" class="btn btn-primary">Ver Conteúdos</a>
-                            <a href="/mesominds/conteudos/cadastrar" class="btn btn-success">Novo Conteúdo</a>
+                        <div class="card-actions">                            <a href="/mesominds/admin/conteudos" class="btn btn-primary">Ver Conteúdos</a>
+                            <a href="/mesominds/admin/conteudos/cadastrar" class="btn btn-success">Novo Conteúdo</a>
                         </div>
                     </div>
 

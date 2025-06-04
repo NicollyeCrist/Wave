@@ -25,7 +25,6 @@ abstract class AdminController {
     protected function isSuperAdmin(): bool {
         return $this->isAdminAuthenticated() && $_SESSION['admin']['cargo'] === 'Super Administrador';
     }    protected function render(string $viewName, array $data = []): void {
-        // Disponibilizar variáveis para a view
         extract($data);
         
         $viewPath = __DIR__ . '/../view/' . $viewName . '.php';
@@ -60,6 +59,5 @@ abstract class AdminController {
         }
     }
 
-    // Métodos abstratos que devem ser implementados
     abstract public function show(): void;
 }

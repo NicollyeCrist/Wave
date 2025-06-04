@@ -36,6 +36,9 @@ $router->get('/admin/cadastrar', 'CadatraAdmin', 'show');
 $router->get('/admin/conteudos', 'AdminListarConteudos', 'show');
 $router->get('/admin/conteudos/cadastrar', 'CadastrarConteudo', 'show');
 $router->get('/admin/conteudos/editar', 'EditarConteudo', 'edit');
+$router->get('/admin/simulados', 'admin/listarSimulados.php', '', true);
+$router->get('/admin/simulados/cadastrar', 'admin/cadastrarSimulado.php', '', true);
+$router->get('/admin/simulados/editar', 'admin/editarSimulado.php', '', true);
 $router->get('/admin/logout', 'AdminLoginController', 'logout');
 
 
@@ -54,10 +57,13 @@ $router->post('/turmas/entrar', 'GerenciarTurma', 'entrar');
 $router->post('/turmas/sair', 'GerenciarTurma', 'sair');
 
 $router->post('/admin/login', 'AdminLoginController', 'login');
-$router->post('/admin/cadastrar', 'CadatraAdmin', 'create');
+$router->post('/admin/cadastrar', 'CadastraAdmin', 'create');
 $router->post('/admin/conteudos/cadastrar', 'CadastrarConteudo', 'create');
 $router->post('/admin/conteudos/atualizar', 'EditarConteudo', 'update');
 $router->post('/admin/conteudos/deletar', 'DeletarConteudo', 'delete');
+$router->post('/admin/simulados/cadastrar', 'controller/cadastraSimulado.php', '', true);
+$router->post('/admin/simulados/atualizar', 'controller/editarSimulado.php', '', true);
+$router->post('/admin/simulados/deletar', 'controller/deletarSimulado.php', '', true);
 $router->post('/register', 'RegisterUserController', 'register');
 $router->post('/login', 'LoginController', 'login');
 

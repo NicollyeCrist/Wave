@@ -29,7 +29,7 @@
                 ?>
             <?php endif; ?>
 
-            <form action="/mesominds/conteudos/atualizar" method="post" class="form">
+            <form action="/mesominds/admin/conteudos/atualizar" method="post" class="form">
                 <input type="hidden" name="id" value="<?= $conteudo->getId() ?>">
                 
                 <div class="form-group">

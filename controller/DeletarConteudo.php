@@ -1,13 +1,19 @@
 <?php
-require_once __DIR__ . '/ConteudoController.php';
+require_once __DIR__ . '/AdminController.php';
 
-class DeletarConteudo extends ConteudoController
+class DeletarConteudo extends AdminController
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+
+    }
     public function delete(): void
     {
         session_start();
         
-        if (!$this->isProfessor()) {
+        if (!$this->isAdminAuthenticated()) {
             $this->redirect('/login');
         }
 
@@ -18,13 +24,13 @@ class DeletarConteudo extends ConteudoController
                 $this->redirect('/conteudos');
             }
 
-            $conteudo = $this->conteudoDao->findById($id);
+            $conteudo = $this->ConteudoDao->findById($id);
             if (!$conteudo) {
                 $this->setMessage('Conteúdo não encontrado.', 'error');
                 $this->redirect('/conteudos');
             }
 
-            $resultado = $this->conteudoDao->delete($id);
+            $resultado = $this->ConteudoDao->delete($id);
             
             if ($resultado) {
                 $this->setMessage("Conteúdo deletado com sucesso!", "success");
@@ -40,13 +46,11 @@ class DeletarConteudo extends ConteudoController
 
     public function list(): void
     {
-        // Redirect to proper list controller
         $this->redirect('/conteudos');
     }
 
     public function create(): void
     {
-        // Redirect to proper create controller
         $this->redirect('/conteudos/cadastrar');
     }
 

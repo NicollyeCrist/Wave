@@ -16,9 +16,7 @@ class ConteudoDao {
         $stmt->execute();
         
         return DbConnection::getConn()->lastInsertId();
-    }
-
-    public function readAll(): array
+    }    public function readAll(): array
     {
         $sql = 'SELECT c.*, d.nome as disciplina_nome 
                 FROM conteudos c 
@@ -38,6 +36,7 @@ class ConteudoDao {
             $c->setDescricao($row['descricao']);
             $c->setIdDisciplina($row['id_disciplina']);
             $c->setLinks($row['links']);
+            $c->setCreatedAt($row['created_at']);
             
             $c->disciplinaNome = $row['disciplina_nome'];
             
@@ -45,9 +44,7 @@ class ConteudoDao {
         }
 
         return $lista;
-    }
-
-    public function findById($id): ?Conteudo
+    }    public function findById($id): ?Conteudo
     {
         $sql = 'SELECT c.*, d.nome as disciplina_nome 
                 FROM conteudos c 
@@ -70,6 +67,7 @@ class ConteudoDao {
         $c->setDescricao($row['descricao']);
         $c->setIdDisciplina($row['id_disciplina']);
         $c->setLinks($row['links']);
+        $c->setCreatedAt($row['created_at']);
         $c->disciplinaNome = $row['disciplina_nome'];
 
         return $c;
@@ -87,9 +85,7 @@ class ConteudoDao {
         $stmt->bindValue(1, $idDisciplina);
         $stmt->execute();
 
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $lista = [];
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);        $lista = [];
         foreach ($result as $row) {
             $c = new Conteudo();
             $c->setId($row['id']);
@@ -97,6 +93,7 @@ class ConteudoDao {
             $c->setDescricao($row['descricao']);
             $c->setIdDisciplina($row['id_disciplina']);
             $c->setLinks($row['links']);
+            $c->setCreatedAt($row['created_at']);
             $c->disciplinaNome = $row['disciplina_nome'];
             
             $lista[] = $c;
@@ -125,6 +122,15 @@ class ConteudoDao {
         $stmt->bindValue(1, $id);
         
         return $stmt->execute();
+    }
+    
+    public function countAll(): int
+    {
+        $sql = 'SELECT COUNT(*) FROM conteudos';
+        $stmt = DbConnection::getConn()->prepare($sql);
+        $stmt->execute();
+        
+        return (int) $stmt->fetchColumn();
     }
 }
 

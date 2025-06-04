@@ -1,23 +1,27 @@
 <?php
-require_once __DIR__ . '/ConteudoController.php';
+require_once __DIR__ . '/adminController.php';
 
-class CadastrarConteudo extends ConteudoController
-{    public function show(): void
+class CadastrarConteudo extends AdminController
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+    }
+    public function show(): void
     {
         session_start();
 
-        if (!$this->isProfessor()) {
+        if (!$this->isAdminAuthenticated()) {
             $this->redirect('/login');
         }
         try {
-            $disciplinas = $this->disciplinaDao->readAll();
-            
-            // DEBUG - Log das disciplinas encontradas
-            error_log("CadastrarConteudo::show() - Disciplinas encontradas: " . count($disciplinas));
+            $disciplinas = $this->DisciplinaDao->readAll();
+
             foreach ($disciplinas as $disciplina) {
                 error_log("Disciplina ID: " . $disciplina['id'] . " - Nome: " . $disciplina['nome']);
             }
-            
+
             $data = ['disciplinas' => $disciplinas];
             $this->render('cadastraConteudo', $data);
         } catch (Exception $e) {
@@ -31,7 +35,7 @@ class CadastrarConteudo extends ConteudoController
     {
         session_start();
 
-        if (!$this->isProfessor()) {
+        if (!$this->isAdminAuthenticated()) {
             $this->redirect('/login');
         }
 
@@ -64,7 +68,7 @@ class CadastrarConteudo extends ConteudoController
                 $conteudo->setIdDisciplina($idDisciplina);
                 $conteudo->setLinks($links);
 
-                $resultado = $this->conteudoDao->create($conteudo);
+                $resultado = $this->ConteudoDao->create($conteudo);
 
                 if ($resultado) {
                     $this->setMessage("Conteúdo cadastrado com sucesso!", "success");

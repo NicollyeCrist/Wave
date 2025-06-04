@@ -38,6 +38,15 @@ class DisciplinaDao {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ?: null;
     }
+    
+    public function countAll(): int
+    {
+        $sql = 'SELECT COUNT(*) FROM disciplinas';
+        $stmt = DbConnection::getConn()->prepare($sql);
+        $stmt->execute();
+        
+        return (int) $stmt->fetchColumn();
+    }
 }
 
 ?>

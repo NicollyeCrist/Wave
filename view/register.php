@@ -26,7 +26,7 @@ session_start();
             </div>
         </div>
 
-        <form class="register-form" method="POST" action="/mesominds/controller/registerController.php">
+        <form class="register-form" method="POST" action="/register">
             <h2 class="register-title">Registro</h2>
 
             <?php if (isset($_SESSION['mensagem_erro'])): ?>

@@ -1,13 +1,18 @@
 <?php
-require_once __DIR__ . '/ConteudoController.php';
+require_once __DIR__ . '/AdminController.php';
 
-class EditarConteudo extends ConteudoController
+class EditarConteudo extends AdminController
 {
+    public function __construct()
+    {
+        parent::__construct();
+
+    }
     public function edit(): void
     {
         session_start();
 
-        if (!$this->isProfessor()) {
+        if (!$this->isAdminAuthenticated()) {
             $this->redirect('/login');
         }
 
@@ -18,13 +23,13 @@ class EditarConteudo extends ConteudoController
                 $this->redirect('/conteudos');
             }
 
-            $conteudo = $this->conteudoDao->findById($id);
+            $conteudo = $this->ConteudoDao->findById($id);
             if (!$conteudo) {
                 $this->setMessage('Conteúdo não encontrado.', 'error');
                 $this->redirect('/conteudos');
             }
 
-            $disciplinas = $this->disciplinaDao->readAll();
+            $disciplinas = $this->DisciplinaDao->readAll();
 
             $data = [
                 'conteudo' => $conteudo,
@@ -42,7 +47,7 @@ class EditarConteudo extends ConteudoController
     {
         session_start();
 
-        if (!$this->isProfessor()) {
+        if (!$this->isAdminAuthenticated()) {
             $this->redirect('/login');
         }
 
@@ -60,7 +65,7 @@ class EditarConteudo extends ConteudoController
                 $this->setMessage('ID do conteúdo inválido.', 'error');
                 $this->redirect('/conteudos');
             }
-            $conteudo = $this->conteudoDao->findById($id);
+            $conteudo = $this->ConteudoDao->findById($id);
             if (!$conteudo) {
                 $this->setMessage('Conteúdo não encontrado.', 'error');
                 $this->redirect('/conteudos');
@@ -85,7 +90,7 @@ class EditarConteudo extends ConteudoController
                 $conteudo->setIdDisciplina($idDisciplina);
                 $conteudo->setLinks($links);
 
-                $resultado = $this->conteudoDao->update($conteudo);
+                $resultado = $this->ConteudoDao->update($conteudo);
 
                 if ($resultado) {
                     $this->setMessage("Conteúdo atualizado com sucesso!", "success");
@@ -104,24 +109,20 @@ class EditarConteudo extends ConteudoController
 
     public function list(): void
     {
-        // Redirect to proper list controller
         $this->redirect('/conteudos');
     }
 
     public function create(): void
     {
-        // Redirect to proper create controller
         $this->redirect('/conteudos/cadastrar');
     }
 
     public function show(): void
     {
-        // Redirect to edit form
         $this->edit();
     }
 
     public function delete(): void
     {
-        // Method not implemented for edit controller
     }
 }

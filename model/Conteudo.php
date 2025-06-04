@@ -7,6 +7,7 @@ class Conteudo {
     private $idDisciplina;
     public $disciplinaNome;
     private $links;
+    private $createdAt;
 
     public function getId() {
         return $this->id;
@@ -57,6 +58,14 @@ class Conteudo {
             return json_decode($this->links, true);
         }
         return $this->links;
+    }
+
+    public function getCreatedAt() {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt($createdAt) {
+        $this->createdAt = $createdAt;
     }
 }
 

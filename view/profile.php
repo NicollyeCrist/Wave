@@ -71,7 +71,7 @@
                     <a href="/questoes" class="btn btn-primary">Questões</a>
                     <a href="/conteudos" class="btn btn-secondary">Conteúdos</a>
                     <a href="/mesominds/turmas" class="btn btn-secondary">Turmas</a>
-                    <a href="/mesominds/controller/logout.php" class="btn btn-danger">Sair</a>
+                    <a href="/logout" class="btn btn-danger">Sair</a>
                 </div>
             </div>            <?php if ($usuario['tipo_usuario'] === 'professor'): ?>
             <div class="profile-section">

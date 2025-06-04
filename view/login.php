@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <form class="login-form" method="POST" action="/mesominds/controller/LoginController.php">
+        <form class="login-form" method="POST" action="/login">
             <h2 class="login-title">Login</h2>
 
             <?php if (isset($_SESSION['mensagem_erro'])): ?>

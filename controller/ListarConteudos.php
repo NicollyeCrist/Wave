@@ -5,11 +5,6 @@ class ListarConteudos extends ConteudoController
 {
     public function list(): void
     {
-        session_start();
-        
-        if (!$this->isAuthenticated()) {
-            $this->redirect('/login');
-        }
 
         try {
             $idDisciplina = filter_input(INPUT_GET, 'disciplina', FILTER_VALIDATE_INT);

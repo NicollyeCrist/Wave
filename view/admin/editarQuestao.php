@@ -26,7 +26,7 @@
 
 <body>
     <h1>Editar Questão #<?php echo $questao->getId(); ?></h1>
-    <form action="../controller/AtualizaQuestao.php" method="post">
+    <form action="/mesominds/admin/questoes/atualizar" method="post">
         <input type="hidden" name="id" value="<?= $questao->getId() ?>">
 
         <label for="enunciado">Enunciado:</label><br>
@@ -61,7 +61,7 @@
         </div>
 
         <button type="submit">Atualizar Questão</button>
-        <a href="/mesominds/questoes/listar">Cancelar</a>
+        <a href="/mesominds/admin/questoes">Cancelar</a>
     </form>
 </body>
 

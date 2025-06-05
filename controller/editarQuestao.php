@@ -19,17 +19,14 @@ class EditarQuestao extends AdminController
             $this->redirect('/admin/login');
         }
 
-        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-
-        if (!$id) {
+        $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);        if (!$id) {
             $this->setMessage("ID inválido ou não fornecido.", 'error');
-            $this->redirect('/questoes/listar');
+            $this->redirect('/admin/questoes');
             return;
-        }        $questoesDao = new QuestoesDao();
-        $questao = $questoesDao->readById($id);
-        if (!$questao) {
+        }$questoesDao = new QuestoesDao();
+        $questao = $questoesDao->readById($id);        if (!$questao) {
             $this->setMessage("Questão não encontrada.", 'error');
-            $this->redirect('/questoes/listar');
+            $this->redirect('/admin/questoes');
             return;
         }
 
@@ -44,7 +41,7 @@ class EditarQuestao extends AdminController
             'conteudos' => $conteudos
         ];
 
-        $this->render('editarQuestao', $data);
+        $this->render('admin/editarQuestao', $data);
     }
 
     public function show(): void

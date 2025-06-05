@@ -28,7 +28,7 @@ $isProfessor = $_SESSION['usuario']['tipo_usuario'] === 'professor';
     <main class="container">
         <div class="page-header">
             <h1>Turmas</h1> <?php if ($isProfessor): ?>
-                <a href="/mesominds/turmas/cadastrar" class="btn btn-primary">Nova Turma</a>
+                <a href="/mesominds/turmas/criar" class="btn btn-primary">Nova Turma</a>
             <?php endif; ?>
         </div>
 

@@ -8,6 +8,14 @@ require_once __DIR__ . '/../controller/UserController.php';
 
 class RegisterUserController extends UserController
 {
+    public function show(): void { 
+        require_once __DIR__ . '/../view/register.php';
+    }
+
+    public function register(): void {
+        $this->create();
+    }
+
     public function create(): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -69,12 +77,7 @@ class RegisterUserController extends UserController
             exit;
         }
     }
-    
-    public function login(string $email, string $senha): void
+      public function login(string $email, string $senha): void
     {
     }
 }
-
-$controller = new RegisterUserController();
-$controller->create();
-?>

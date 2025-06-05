@@ -123,14 +123,44 @@ class ConteudoDao {
         
         return $stmt->execute();
     }
-    
-    public function countAll(): int
+      public function countAll(): int
     {
         $sql = 'SELECT COUNT(*) FROM conteudos';
         $stmt = DbConnection::getConn()->prepare($sql);
         $stmt->execute();
         
         return (int) $stmt->fetchColumn();
+    }
+
+    public function findByTitulo(string $titulo): array
+    {
+        $sql = 'SELECT c.*, d.nome as disciplina_nome 
+                FROM conteudos c 
+                LEFT JOIN disciplinas d ON c.id_disciplina = d.id 
+                WHERE c.titulo LIKE ? 
+                ORDER BY c.created_at DESC';
+
+        $stmt = DbConnection::getConn()->prepare($sql);
+        $stmt->bindValue(1, "%$titulo%");
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $lista = [];
+        
+        foreach ($result as $row) {
+            $c = new Conteudo();
+            $c->setId($row['id']);
+            $c->setTitulo($row['titulo']);
+            $c->setDescricao($row['descricao']);
+            $c->setIdDisciplina($row['id_disciplina']);
+            $c->setLinks($row['links']);
+            $c->setCreatedAt($row['created_at']);
+            $c->disciplinaNome = $row['disciplina_nome'];
+            
+            $lista[] = $c;
+        }
+
+        return $lista;
     }
 }
 

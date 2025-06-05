@@ -24,7 +24,7 @@
                 unset($_SESSION['admin_mensagem']);
                 unset($_SESSION['admin_tipo_mensagem']);
                 ?>
-            <?php endif; ?>
+           <?php endif; ?> 
 
             <form action="/mesominds/admin/cadastrar" method="post" class="register-form">
                 <div class="form-row">

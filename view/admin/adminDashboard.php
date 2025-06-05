@@ -106,13 +106,11 @@
                         <div class="card-actions">                            <a href="/mesominds/admin/conteudos" class="btn btn-primary">Ver Conteúdos</a>
                             <a href="/mesominds/admin/conteudos/cadastrar" class="btn btn-success">Novo Conteúdo</a>
                         </div>
-                    </div>
-
-                    <div class="action-card">
+                    </div>                    <div class="action-card">
                         <h3>❓ Gerenciar Questões</h3>
                         <p>Criar e organizar questões para simulados</p>
                         <div class="card-actions">
-                            <a href="/mesominds/questoes" class="btn btn-primary">Ver Questões</a>
+                            <a href="/mesominds/admin/questoes" class="btn btn-primary">Ver Questões</a>
                             <a href="/mesominds/questoes/cadastrar" class="btn btn-success">Nova Questão</a>
                         </div>
                     </div>

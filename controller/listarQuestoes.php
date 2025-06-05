@@ -28,14 +28,13 @@ class ListarQuestoes extends AdminController
             
             $data = [
                 'questoes' => $questoes,
-                'mapConteudos' => $mapConteudos
-            ];
+                'mapConteudos' => $mapConteudos            ];
             
-            $this->render('listarQuestoes', $data);
+            $this->render('admin/listarQuestoes', $data);
         } catch (Exception $e) {
             error_log("ListarQuestoes::list() - Erro: " . $e->getMessage());
             $this->setMessage('Erro ao carregar questões: ' . $e->getMessage(), 'error');
-            $this->render('listarQuestoes', ['questoes' => [], 'mapConteudos' => []]);
+            $this->render('admin/listarQuestoes', ['questoes' => [], 'mapConteudos' => []]);
         }
     }
 

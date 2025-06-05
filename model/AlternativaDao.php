@@ -45,5 +45,9 @@ class AlternativaDao {
         $stmt = DbConnection::getConn()->prepare($sql);
         $stmt->execute([$texto, $correta ? 1 : 0, $id]);
     }
+
+    public function findByQuestao(int $idQuestao): array {
+        return $this->readByQuestaoId($idQuestao);
+    }
 }
 ?>

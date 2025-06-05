@@ -20,86 +20,85 @@
         </h1>
         <?php
         $tituloPrincipal = "Funções";
-        $tituloGrupo1 = "Quetões por nível";
+        $tituloGrupo1 = "Questões por nível";
         $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes'],
-            ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
-            ['texto' => 'Questões nível 3', 'href' => '#nivel3']
+            ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes/assunto?assunto=Função&nivel=1'],
+            ['texto' => 'Questões nível 2', 'href' => '/mesominds/questoes/assunto?assunto=Função&nivel=2'],
+            ['texto' => 'Questões nível 3', 'href' => '/mesominds/questoes/assunto?assunto=Função&nivel=3']
         ];
         $tituloGrupo2 = "Questões ENEM";
         $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
-            ['texto' => 'ENEM 2022', 'href' => '#enem2022']
+            ['texto' => 'ENEM 2024', 'href' => '/mesominds/questoes/assunto?assunto=Função&enem=2024'],
+            ['texto' => 'ENEM 2023', 'href' => '/mesominds/questoes/assunto?assunto=Função&enem=2023'],
+            ['texto' => 'ENEM 2022', 'href' => '/mesominds/questoes/assunto?assunto=Função&enem=2022']
         ];
 
         include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
-        ?>
-        <?php
-        $tituloPrincipal = "Conjuntos";
-        $tituloGrupo1 = "Quetões por nível";
-        $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes'],
-            ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
-            ['texto' => 'Questões nível 3', 'href' => '#nivel3']
-        ];
-        $tituloGrupo2 = "Questões ENEM";
-        $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],
-            ['texto' => 'ENEM 2022', 'href' => '#enem2022']
-        ];
+        ?> <?php
+         $tituloPrincipal = "Conjuntos";
+         $tituloGrupo1 = "Questões por nível";
+         $linksGrupo1 = [
+             ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes/assunto?assunto=Conjuntos&nivel=1'],
+             ['texto' => 'Questões nível 2', 'href' => '/mesominds/questoes/assunto?assunto=Conjuntos&nivel=2'],
+             ['texto' => 'Questões nível 3', 'href' => '/mesominds/questoes/assunto?assunto=Conjuntos&nivel=3']
+         ];
+         $tituloGrupo2 = "Questões ENEM";
+         $linksGrupo2 = [
+             ['texto' => 'ENEM 2024', 'href' => '/mesominds/questoes/assunto?assunto=Conjuntos&enem=2024'],
+             ['texto' => 'ENEM 2023', 'href' => '/mesominds/questoes/assunto?assunto=Conjuntos&enem=2023'],
+             ['texto' => 'ENEM 2022', 'href' => '/mesominds/questoes/assunto?assunto=Conjuntos&enem=2022']
+         ];
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
-        ?>
-        <?php
-        $tituloPrincipal = "Frações";
-        $tituloGrupo1 = "Quetões por nível";
-        $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => '#nivel1'],
-            ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
-            ['texto' => 'Questões nível 3', 'href' => '#nivel3']
-        ];
-        $tituloGrupo2 = "Questões ENEM";
-        $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
-        ];
+         include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
+         ?> <?php
+          $tituloPrincipal = "Frações";
+          $tituloGrupo1 = "Questões por nível";
+          $linksGrupo1 = [
+              ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes/assunto?assunto=Frações&nivel=1'],
+              ['texto' => 'Questões nível 2', 'href' => '/mesominds/questoes/assunto?assunto=Frações&nivel=2'],
+              ['texto' => 'Questões nível 3', 'href' => '/mesominds/questoes/assunto?assunto=Frações&nivel=3']
+          ];
+          $tituloGrupo2 = "Questões ENEM";
+          $linksGrupo2 = [
+              ['texto' => 'ENEM 2024', 'href' => '/mesominds/questoes/assunto?assunto=Frações&enem=2024'],
+              ['texto' => 'ENEM 2023', 'href' => '/mesominds/questoes/assunto?assunto=Frações&enem=2023'],
+              ['texto' => 'ENEM 2022', 'href' => '/mesominds/questoes/assunto?assunto=Frações&enem=2022']
+          ];
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
-        ?>
-        <?php
-        $tituloPrincipal = "Porcentagem";
-        $tituloGrupo1 = "Quetões por nível";
-        $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => '#nivel1'],
-            ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
-            ['texto' => 'Questões nível 3', 'href' => '#nivel3']
-        ];
-        $tituloGrupo2 = "Questões ENEM";
-        $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
-        ];
+          include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
+          ?> <?php
+           $tituloPrincipal = "Porcentagem";
+           $tituloGrupo1 = "Questões por nível";
+           $linksGrupo1 = [
+               ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes/assunto?assunto=Porcentagem&nivel=1'],
+               ['texto' => 'Questões nível 2', 'href' => '/mesominds/questoes/assunto?assunto=Porcentagem&nivel=2'],
+               ['texto' => 'Questões nível 3', 'href' => '/mesominds/questoes/assunto?assunto=Porcentagem&nivel=3']
+           ];
+           $tituloGrupo2 = "Questões ENEM";
+           $linksGrupo2 = [
+               ['texto' => 'ENEM 2024', 'href' => '/mesominds/questoes/assunto?assunto=Porcentagem&enem=2024'],
+               ['texto' => 'ENEM 2023', 'href' => '/mesominds/questoes/assunto?assunto=Porcentagem&enem=2023'],
+               ['texto' => 'ENEM 2022', 'href' => '/mesominds/questoes/assunto?assunto=Porcentagem&enem=2022']
+           ];
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
-        ?>
-        <?php
-        $tituloPrincipal = "Probabilidade";
-        $tituloGrupo1 = "Quetões por nível";
-        $linksGrupo1 = [
-            ['texto' => 'Questões nível 1', 'href' => '#nivel1'],
-            ['texto' => 'Questões nível 2', 'href' => '#nivel2'],
-            ['texto' => 'Questões nível 3', 'href' => '#nivel3']
-        ];
-        $tituloGrupo2 = "Questões ENEM";
-        $linksGrupo2 = [
-            ['texto' => 'ENEM 2024', 'href' => '#enem2024'],
-            ['texto' => 'ENEM 2023', 'href' => '#enem2023'],        ['texto' => 'ENEM 2022', 'href' => '#enem2022']
-        ];
+           include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
+           ?> <?php
+            $tituloPrincipal = "Probabilidade";
+            $tituloGrupo1 = "Questões por nível";
+            $linksGrupo1 = [
+                ['texto' => 'Questões nível 1', 'href' => '/mesominds/questoes/assunto?assunto=Probabilidade&nivel=1'],
+                ['texto' => 'Questões nível 2', 'href' => '/mesominds/questoes/assunto?assunto=Probabilidade&nivel=2'],
+                ['texto' => 'Questões nível 3', 'href' => '/mesominds/questoes/assunto?assunto=Probabilidade&nivel=3']
+            ];
+            $tituloGrupo2 = "Questões ENEM";
+            $linksGrupo2 = [
+                ['texto' => 'ENEM 2024', 'href' => '/mesominds/questoes/assunto?assunto=Probabilidade&enem=2024'],
+                ['texto' => 'ENEM 2023', 'href' => '/mesominds/questoes/assunto?assunto=Probabilidade&enem=2023'],
+                ['texto' => 'ENEM 2022', 'href' => '/mesominds/questoes/assunto?assunto=Probabilidade&enem=2022']
+            ];
 
-        include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
-        ?>
+            include $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/questoesTemplate.php';
+            ?>
     </main>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>

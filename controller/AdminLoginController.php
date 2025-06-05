@@ -3,15 +3,14 @@
 require_once __DIR__ . '/AdminController.php';
 
 class AdminLoginController extends AdminController {
-    
-    public function show(): void {
+      public function show(): void {
         session_start();
         
         if ($this->isAdminAuthenticated()) {
             $this->redirect('/admin/dashboard');
         }
         
-        $this->render('adminLogin');
+        $this->render('admin/adminLogin');
     }
 
     public function login(): void {
@@ -30,7 +29,6 @@ class AdminLoginController extends AdminController {
                 $this->redirect('/admin/login');
             }
 
-            // Buscar admin pelo email
             $admin = $this->adminDao->findByEmail($email);
 
             if (!$admin) {
@@ -38,19 +36,16 @@ class AdminLoginController extends AdminController {
                 $this->redirect('/admin/login');
             }
 
-            // Verificar senha
             if (!$admin->verificarSenha($senha)) {
                 $this->setMessage('Email ou senha incorretos.', 'error');
                 $this->redirect('/admin/login');
             }
 
-            // Verificar se admin está ativo
             if (!$admin->isAtivo()) {
                 $this->setMessage('Conta desativada. Entre em contato com o administrador.', 'error');
                 $this->redirect('/admin/login');
             }
 
-            // Login bem-sucedido
             $_SESSION['admin'] = [
                 'id' => $admin->getId(),
                 'nome' => $admin->getNome(),
@@ -58,7 +53,6 @@ class AdminLoginController extends AdminController {
                 'cargo' => $admin->getCargo()
             ];
 
-            // Atualizar último login
             $this->adminDao->updateUltimoLogin($admin->getId());
 
             $this->setMessage('Login realizado com sucesso!', 'success');
@@ -74,7 +68,6 @@ class AdminLoginController extends AdminController {
     public function logout(): void {
         session_start();
         
-        // Limpar sessão do admin
         unset($_SESSION['admin']);
         unset($_SESSION['admin_mensagem']);
         unset($_SESSION['admin_tipo_mensagem']);

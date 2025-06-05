@@ -35,27 +35,25 @@ class DeletaQuestao extends AdminController
                 
                 $questoesDao = new QuestoesDao();
                 $questoesDao->delete($id);
-                
-                $conn->commit();
+                  $conn->commit();
                 $this->setMessage('Questão deletada com sucesso!', 'success');
-                $this->redirect('/questoes/listar');
-                exit;            } catch (PDOException $e) {
+                $this->redirect('/admin/questoes');
+                exit;} catch (PDOException $e) {
                 if ($conn->inTransaction()) {
                     $conn->rollBack();
-                }
-                error_log("Erro ao deletar questão: " . $e->getMessage());
+                }                error_log("Erro ao deletar questão: " . $e->getMessage());
                 $this->setMessage('Erro ao deletar questão: ' . $e->getMessage(), 'error');
-                $this->redirect('/questoes/listar');
+                $this->redirect('/admin/questoes');
             }
         } else {
             $this->setMessage('ID inválido fornecido.', 'error');
-            $this->redirect('/questoes/listar');
+            $this->redirect('/admin/questoes');
         }
     }
 
     public function show(): void
     {
-        $this->redirect('/questoes/listar');
+        $this->redirect('/admin/questoes');
     }
     public function create(): void
     {

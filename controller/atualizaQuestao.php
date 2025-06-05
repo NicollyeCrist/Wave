@@ -16,13 +16,17 @@ class AtualizaQuestao extends AdminController
 
     public function show(): void
     {
-        // This method is required by AdminController but not used for updates
         if (!$this->isAdminAuthenticated()) {
             header('Location: /mesominds/admin/login');
             exit;
         }
-    }    public function update(): void
+    }
+    public function update(): void
     {
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
+
         if (!$this->isAdminAuthenticated()) {
             header('Location: /mesominds/admin/login');
             exit;
@@ -32,8 +36,7 @@ class AtualizaQuestao extends AdminController
         $enunciado = filter_input(INPUT_POST, 'enunciado', FILTER_SANITIZE_SPECIAL_CHARS);
         $id_conteudo = filter_input(INPUT_POST, 'id_conteudo', FILTER_VALIDATE_INT);
         $alternativas = filter_input(INPUT_POST, 'alternativas', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
-        $correta = filter_input(INPUT_POST, 'correta'); // Recebe o id da alternativa correta como string
-
+        $correta = filter_input(INPUT_POST, 'correta');
         if ($id && $enunciado && $id_conteudo && $alternativas && $correta !== null) {
             try {
                 $conn = DbConnection::getConn();
@@ -50,13 +53,12 @@ class AtualizaQuestao extends AdminController
                     if (strpos($altId, 'new_') === 0) {
                         $alternativaDao->create($id, $texto, $altId == $correta);
                     } else {
-                        $alternativaDao->update((int)$altId, $texto, $altId == $correta);
+                        $alternativaDao->update((int) $altId, $texto, $altId == $correta);
                     }
                 }
-
                 $conn->commit();
                 $this->setMessage('Questão atualizada com sucesso!', 'success');
-                header('Location: /mesominds/admin/questoes');
+                header('Location: /mesominds/admin/questoes?msg=atualizada');
                 exit;
             } catch (PDOException $e) {
                 $conn->rollBack();
@@ -66,12 +68,16 @@ class AtualizaQuestao extends AdminController
             }
         } else {
             $errors = [];
-            if (!$id) $errors[] = 'ID não fornecido';
-            if (!$enunciado) $errors[] = 'Enunciado não preenchido';
-            if (!$id_conteudo) $errors[] = 'Conteúdo não selecionado';
-            if (!$alternativas) $errors[] = 'Alternativas não preenchidas';
-            if ($correta === null) $errors[] = 'Alternativa correta não selecionada';
-            
+            if (!$id)
+                $errors[] = 'ID não fornecido';
+            if (!$enunciado)
+                $errors[] = 'Enunciado não preenchido';
+            if (!$id_conteudo)
+                $errors[] = 'Conteúdo não selecionado';
+            if (!$alternativas)
+                $errors[] = 'Alternativas não preenchidas';
+            if ($correta === null)
+                $errors[] = 'Alternativa correta não selecionada';
             $this->setMessage('Dados inválidos: ' . implode(', ', $errors), 'error');
             header('Location: /mesominds/admin/questoes');
             exit;
@@ -89,11 +95,7 @@ class AtualizaQuestao extends AdminController
     public function edit(): void
     {
     }
-
     public function list(): void
     {
     }
 }
-
-$ctrl = new AtualizaQuestao();
-$ctrl->update();

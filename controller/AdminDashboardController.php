@@ -36,8 +36,7 @@ class AdminDashboardController extends AdminController {
                 'totalConteudos' => $totalConteudos,
                 'totalQuestoes' => $totalQuestoes,
                 'totalTurmas' => $totalTurmas,
-                'totalAdmins' => $totalAdmins
-            ];
+                'totalAdmins' => $totalAdmins            ];
               $this->render('admin/adminDashboard', $data);
             
         } catch (Exception $e) {

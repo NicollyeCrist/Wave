@@ -12,9 +12,8 @@
 </head>
 
 <body>
-    <?php 
-    session_start();
-    include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; 
+    <?php
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php';
     ?>
     <div class="login-container">
         <div class="logo-area">
@@ -23,7 +22,7 @@
             </div>
         </div>
 
-        <form class="login-form" method="POST" action="/login">
+        <form class="login-form" method="POST" action="/mesominds/login">
             <h2 class="login-title">Login</h2>
 
             <?php if (isset($_SESSION['mensagem_erro'])): ?>
@@ -62,7 +61,8 @@
     </div>
 
     <style>
-        .mensagem-erro, .mensagem-sucesso {
+        .mensagem-erro,
+        .mensagem-sucesso {
             padding: 12px;
             margin-bottom: 20px;
             border-radius: 4px;

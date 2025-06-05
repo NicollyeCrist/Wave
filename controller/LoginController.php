@@ -5,25 +5,38 @@ require_once __DIR__ . '/../controller/UserController.php';
 
 class LoginController extends UserController{
 
-    public function login(string $email, string $senha): void {
-        try {
+    public function show(): void {
+        session_start();
+        
+        if (isset($_SESSION['usuario'])) {
+            header('Location: /mesominds/profile');
+            exit;
+        }
+        
+        require_once __DIR__ . '/../view/login.php';
+    }
+
+    public function login(string $email = '', string $senha = ''): void {
+        session_start();
+        
+        if (empty($email) && empty($senha)) {
+            $email = $_POST['email'] ?? '';
+            $senha = $_POST['senha'] ?? '';
+        }        try {
             $usuario = $this->dao->searchByEmail($email);
 
             if (!$usuario) {
-                session_start();
                 $_SESSION['mensagem_erro'] = 'Usuário não encontrado.';
                 header('Location: /mesominds/login');
                 exit;
             }
 
             if (!password_verify($senha, $usuario['senha'])) {
-                session_start();
                 $_SESSION['mensagem_erro'] = 'Senha incorreta.';
                 header('Location: /mesominds/login');
                 exit;
             }
 
-            session_start();
             $_SESSION['usuario'] = [
                 'id' => $usuario['id'],
                 'nome' => $usuario['nome'],
@@ -36,15 +49,10 @@ class LoginController extends UserController{
 
             header('Location: /mesominds/profile');
         } catch (Exception $e) {
-            die('Erro: ' . $e->getMessage());
+            $_SESSION['mensagem_erro'] = 'Erro interno: ' . $e->getMessage();
+            header('Location: /mesominds/login');
         }
     }
 
     public function create(): void{}
-
 }
-
-$email = $_POST['email'] ?? '';
-$senha = $_POST['senha'] ?? '';
-$controller = new LoginController();
-$controller->login($email, $senha);

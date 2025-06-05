@@ -64,5 +64,7 @@ abstract class AdminController {
         }
     }
 
-    abstract public function show(): void;
+    public function show(): void {
+        require_once __DIR__ . '/../view/admin.php';
+    }
 }

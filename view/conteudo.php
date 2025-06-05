@@ -16,7 +16,6 @@
 <body>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/header.php'; ?>
     <h1>Conteúdos</h1>
-    <h4>Os conteúdos são separados por ordem da BNCC</h4>
     <div class="containerCont">
         <div class="primeiroEM">
             <h1>Ensino médio 1° ano</h1>

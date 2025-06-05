@@ -2,13 +2,12 @@
 
 require_once __DIR__ . '/AdminController.php';
 
-class CadatraAdmin extends AdminController {
-    
-    public function show(): void {
+class CadatrasAdmin extends AdminController {
+      public function show(): void {
         session_start();
         $this->requireSuperAdmin(); 
         
-        $this->render('cadastrarAdmin');
+        $this->render('admin/cadastrarAdmin');
     }
 
     public function create(): void {
@@ -20,7 +19,6 @@ class CadatraAdmin extends AdminController {
         }
 
         try {
-            // Validar e sanitizar dados
             $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
             $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
             $telefone = filter_input(INPUT_POST, 'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -28,7 +26,6 @@ class CadatraAdmin extends AdminController {
             $senha = $_POST['senha'] ?? '';
             $confirmarSenha = $_POST['confirmar_senha'] ?? '';
 
-            // Validações
             if (empty($nome) || empty($email) || empty($senha) || empty($confirmarSenha)) {
                 $this->setMessage('Todos os campos obrigatórios devem ser preenchidos.', 'error');
                 $this->redirect('/admin/cadastrar');
@@ -49,13 +46,11 @@ class CadatraAdmin extends AdminController {
                 $this->redirect('/admin/cadastrar');
             }
 
-            // Verificar se email já existe
             if ($this->adminDao->emailExists($email)) {
                 $this->setMessage('Este email já está cadastrado.', 'error');
                 $this->redirect('/admin/cadastrar');
             }
 
-            // Criar novo admin
             $admin = new Admin();
             $admin->setNome($nome);
             $admin->setEmail($email);

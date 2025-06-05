@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -26,7 +22,7 @@ session_start();
             </div>
         </div>
 
-        <form class="register-form" method="POST" action="/register">
+        <form class="register-form" method="POST" action="/mesominds/register">
             <h2 class="register-title">Registro</h2>
 
             <?php if (isset($_SESSION['mensagem_erro'])): ?>

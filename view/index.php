@@ -20,7 +20,7 @@
         </div>
         <div class="ComeceAgoraArea">
             <h1>Comece a aprender matemática agora! Grátis!</h1>
-            <a href="#">Comece a aprender agora mesmo!</a>
+            <a href="/mesominds/register">Comece a aprender agora mesmo!</a>
         </div>
     </div>
     <div class="profArea">
@@ -55,12 +55,12 @@
         <h4>Principais conteúdos ENEM</h4>
         <div class="questoesContent">
             <div class="questContArea">
-                <a href="#">Matemática básica</a>
-                <a href="#">Estatística</a>
-                <a href="#">Geometria Espacial</a>
-                <a href="#">Funções</a>
-                <a href="#">Geometria Plana</a>
-                <a href="#">Aritmética</a>
+                <a href="/mesominds/questoes/assunto?assunto=Função">Função</a>
+                <a href="/mesominds/questoes/assunto?assunto=Estatística">Estatística</a>
+                <a href="/mesominds/questoes/assunto?assunto=Geometria Espacial">Geometria Espacial</a>
+                <a href="/mesominds/questoes/assunto?assunto=Conjuntos">Conjuntos</a>
+                <a href="/mesominds/questoes/assunto?assunto=Geometria Plana">Geometria Plana</a>
+                <a href="/mesominds/questoes/assunto?assunto=Porcentagem">Porcentagem</a>
             </div>
             <div class="questEnemeArea">
                 <a href="#">Questões ENEM 2024</a>
@@ -74,7 +74,7 @@
         <h1>
             Comece a aprender agora!
         </h1>
-        <a href="#">Comece a aprender!</a>
+        <a href="/mesominds/register">Comece a aprender!</a>
     </div>
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>

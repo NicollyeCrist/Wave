@@ -87,7 +87,6 @@ CREATE TABLE IF NOT EXISTS turma_usuario (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
--- Inserir disciplinas padrão
 INSERT IGNORE INTO disciplinas (nome, descricao) VALUES 
 ('Geometria Plana', 'Estudo de figuras geométricas em duas dimensões'),
 ('Estatística', 'Coleta, organização e interpretação de dados'),

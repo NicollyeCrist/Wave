@@ -63,10 +63,10 @@
                 <a href="/mesominds/questoes/assunto?assunto=Porcentagem">Porcentagem</a>
             </div>
             <div class="questEnemeArea">
-                <a href="#">Questões ENEM 2024</a>
-                <a href="#">Questões ENEM 2023</a>
-                <a href="#">Questões ENEM 2022</a>
-                <a href="#">Questões ENEM 2021</a>
+                <a href="/mesominds/embreve">Questões ENEM 2024</a>
+                <a href="/mesominds/embreve">Questões ENEM 2023</a>
+                <a href="/mesominds/embreve">Questões ENEM 2022</a>
+                <a href="/mesominds/embreve">Questões ENEM 2021</a>
             </div>
         </div>
     </div>

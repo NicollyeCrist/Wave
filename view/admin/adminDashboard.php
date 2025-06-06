@@ -115,14 +115,14 @@
                         </div>
                     </div>
 
-                    <div class="action-card">
+                    <!-- <div class="action-card">
                         <h3>🏫 Gerenciar Turmas</h3>
                         <p>Criar e administrar turmas de alunos</p>
                         <div class="card-actions">
                             <a href="/mesominds/turmas" class="btn btn-primary">Ver Turmas</a>
                             <a href="/mesominds/turmas/criar" class="btn btn-success">Nova Turma</a>
                         </div>
-                    </div>
+                    </div> -->
 
                     <?php if (isset($_SESSION['admin']) && $_SESSION['admin']['cargo'] === 'Super Administrador'): ?>
                     <div class="action-card super-admin">

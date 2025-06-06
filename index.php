@@ -16,6 +16,7 @@ $router->get('/conteudos/editar', 'EditarConteudo', 'edit');
 
 $router->get('/pagina-sobre', 'sobre.php', '', true); 
 $router->get('/pagina-ajuda', 'ajuda.php', '', true); 
+$router->get('/em-breve', 'emBreve.php', '', true);
 $router->get('/questoes', 'questoes.php', '', true);
 $router->get('/questoes/assunto', 'QuestoesPorAssuntoController', 'porAssunto');
 $router->get('/conteudo', 'conteudo.php', '', true);

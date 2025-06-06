@@ -257,7 +257,6 @@ if (session_status() == PHP_SESSION_NONE) {
             margin: 0;
             color: rgba(255, 255, 255, 0.9);
         }
-          /* Responsividade para mobile */
         @media (max-width: 768px) {
             .conteudos-grid {
                 grid-template-columns: 1fr;

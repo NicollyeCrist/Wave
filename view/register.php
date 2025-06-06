@@ -57,7 +57,7 @@
                     value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>">
             </div>
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="form-label">Como deseja se cadastrar:</label>
                 <div class="radio-group">
                     <div class="radio-option">
@@ -65,11 +65,12 @@
                         <label for="professor">Professor</label>
                     </div>
                     <div class="radio-option">
-                        <input type="radio" id="aluno" name="tipo_usuario" value="aluno">
+                        <input type="radio" id="aluno" name="tipo_usuario" value="aluno" select>
                         <label for="aluno">Aluno</label>
                     </div>
                 </div>
-            </div>
+            </div>-->
+            <input type="hidden" name="tipo_usuario" value="aluno">
 
             <div class="form-group">
                 <label class="form-label">Escola</label>

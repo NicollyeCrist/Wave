@@ -2,8 +2,8 @@
 
 class Questoes{
     private $id, $enunciado, $id_conteudo, $id_questao, $nivel_dificuldade, $correcao, $created_at;
-    private $alternativas; 
-    public $conteudoTitulo; 
+    private $alternativas; // Para armazenar as alternativas da questão
+    public $conteudoTitulo; // Propriedade pública para título do conteúdo
 
     public function getId() {
         return $this->id;

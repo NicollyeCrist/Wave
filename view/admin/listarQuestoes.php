@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+// Verificar se o admin está logado
 if (!isset($_SESSION['admin'])) {
     header('Location: /mesominds/admin/login');
     exit;

@@ -37,11 +37,9 @@
                     <?= htmlspecialchars($_SESSION['mensagem_sucesso']) ?>
                 </div>
                 <?php unset($_SESSION['mensagem_sucesso']); ?>
-            <?php endif; ?>
-
-            <div class="form-group">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" id="email" class="form-input" name="email" required>
+            <?php endif; ?>            <div class="form-group">
+                <label for="nome" class="form-label">Nome de Usuário</label>
+                <input type="text" id="nome" class="form-input" name="nome" required>
             </div>
 
             <div class="form-group">

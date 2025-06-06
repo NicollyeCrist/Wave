@@ -17,15 +17,17 @@ class RegisterUserController extends UserController
     }
 
     public function create(): void
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    {        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nome = $_POST['nome'] ?? '';
             $telefone = $_POST['telefone'] ?? '';
             $email = $_POST['email'] ?? '';
             $tipo_usuario = $_POST['tipo_usuario'] ?? '';
-            $escola = $_POST['escola'] ?? '';
+            $escola = $_POST['escola'] ?? '';            
             $senha = $_POST['senha'] ?? '';
             $confirma_senha = $_POST['confirma_senha'] ?? '';
+
+            $nomeOriginal = $nome;
+            $nome = str_replace(' ', '_', trim($nome));
 
             if (empty($nome) || empty($tipo_usuario) || empty($escola) || empty($senha)) {
                 $_SESSION['mensagem_erro'] = 'Todos os campos são obrigatórios.';
@@ -37,18 +39,20 @@ class RegisterUserController extends UserController
                 $_SESSION['mensagem_erro'] = 'As senhas não coincidem.';
                 header("Location: /mesominds/register");
                 exit;
-            }
-
-            if (strlen($senha) < 6) {
+            }            if (strlen($senha) < 6) {
                 $_SESSION['mensagem_erro'] = 'A senha deve ter pelo menos 6 caracteres.';
                 header("Location: /mesominds/register");
                 exit;
             }
 
+            if ($nomeOriginal !== $nome && strpos($nomeOriginal, ' ') !== false) {
+                $_SESSION['mensagem_info'] = 'Espaços no nome foram substituídos por underline (_). Seu nome de usuário será: ' . $nome;
+            }
+
             try {
-                $usuarioExistente = $this->dao->searchByEmail($email);
+                $usuarioExistente = $this->dao->searchByNome($nome);
                 if ($usuarioExistente) {
-                    $_SESSION['mensagem_erro'] = 'Email já cadastrado. Tente fazer login.';
+                    $_SESSION['mensagem_erro'] = 'Nome de usuário já cadastrado. Escolha outro nome.';
                     header("Location: /mesominds/register");
                     exit;
                 }
@@ -74,10 +78,10 @@ class RegisterUserController extends UserController
             }
         } else {
             header("Location: /mesominds/register");
-            exit;
-        }
+            exit;        }
     }
-      public function login(string $email, string $senha): void
+    
+    public function login(string $nome, string $senha): void
     {
     }
 }

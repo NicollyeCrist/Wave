@@ -29,6 +29,14 @@ class UsuarioDao {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function searchByNome($nome) {
+        $sql = "SELECT * FROM usuarios WHERE nome = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindValue(1, $nome);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function readAll() {
         $sql = "SELECT * FROM usuarios";
         $stmt = $this->conn->prepare($sql);

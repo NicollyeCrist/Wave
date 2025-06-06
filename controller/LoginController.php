@@ -14,16 +14,19 @@ class LoginController extends UserController{
         }
         
         require_once __DIR__ . '/../view/login.php';
-    }
-
-    public function login(string $email = '', string $senha = ''): void {
+    }    public function login(string $nome = '', string $senha = ''): void {
         session_start();
         
-        if (empty($email) && empty($senha)) {
-            $email = $_POST['email'] ?? '';
+        if (empty($nome) && empty($senha)) {
+            $nome = $_POST['nome'] ?? '';
             $senha = $_POST['senha'] ?? '';
-        }        try {
-            $usuario = $this->dao->searchByEmail($email);
+        }
+
+        // Substituir espaços por underline no nome
+        $nome = str_replace(' ', '_', trim($nome));
+
+        try {
+            $usuario = $this->dao->searchByNome($nome);
 
             if (!$usuario) {
                 $_SESSION['mensagem_erro'] = 'Usuário não encontrado.';

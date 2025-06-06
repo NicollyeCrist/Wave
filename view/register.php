@@ -30,19 +30,23 @@
                     <?= htmlspecialchars($_SESSION['mensagem_erro']) ?>
                 </div>
                 <?php unset($_SESSION['mensagem_erro']); ?>
-            <?php endif; ?>
-
-            <?php if (isset($_SESSION['mensagem_sucesso'])): ?>
+            <?php endif; ?>            <?php if (isset($_SESSION['mensagem_sucesso'])): ?>
                 <div class="mensagem-sucesso">
                     <?= htmlspecialchars($_SESSION['mensagem_sucesso']) ?>
                 </div>
                 <?php unset($_SESSION['mensagem_sucesso']); ?>
             <?php endif; ?>
 
-            <div class="form-group">
+            <?php if (isset($_SESSION['mensagem_info'])): ?>
+                <div class="mensagem-info">
+                    <?= htmlspecialchars($_SESSION['mensagem_info']) ?>
+                </div>
+                <?php unset($_SESSION['mensagem_info']); ?>
+            <?php endif; ?>            <div class="form-group">
                 <label class="form-label">Nome</label>
                 <input type="text" class="form-input" name="nome" required
-                    value="<?= isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : '' ?>">
+                    value="<?= isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : '' ?>"
+                    placeholder="Seu nome de usuário (espaços serão substituídos por _)">
             </div>
 
             <!--<div class="form-group">
@@ -94,8 +98,21 @@
             <div class="login-link">
                 <p>Já tem uma conta? <a href="/mesominds/login">Faça login</a></p>
             </div>
-        </form>
-    </div>
+        </form>    </div>
+    
+    <style>
+        .mensagem-info {
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+            background-color: #e7f3ff;
+            color: #004085;
+            border: 1px solid #b3d7ff;
+        }
+    </style>
+    
     <?php include_once $_SERVER['DOCUMENT_ROOT'] . '/mesominds/view/partials/footer.php'; ?>
 </body>
 

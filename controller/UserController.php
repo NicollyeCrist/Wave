@@ -8,6 +8,6 @@ abstract class UserController{
     }
 
     abstract public function create(): void;
-    abstract public function login(string $email, string $senha): void;
+    abstract public function login(string $nome, string $senha): void;
 }
 ?>

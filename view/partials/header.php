@@ -17,7 +17,7 @@ $userType = $isLoggedIn ? $_SESSION['usuario']['tipo_usuario'] : null;
         </div>
         <a href="/mesominds/conteudos">Conteúdos</a>
         <a href="/mesominds/questoes">Questões</a>
-        <a href="#">Simulados</a>
+        <a href="/mesominds/embreve">Simulados</a>
         
         <?php if ($isLoggedIn): ?>
             <a href="/mesominds/turmas">Turmas</a>

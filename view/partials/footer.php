@@ -10,15 +10,15 @@
         <div class="grid-item">
             <h3>Recursos</h3>
             <p><a href="/mesominds/questoes">Resolver questões</a></p>
-            <p><a href="#">Resolver simulados</a></p>
-            <p><a href="#">Aprender matemática</a></p>
+            <p><a href="/mesominds/embreve">Resolver simulados</a></p>
+            <p><a href="/mesominds/conteudos">Aprender matemática</a></p>
         </div>
 
         <div class="grid-item">
             <h3>Contato</h3>
             <p><a href="#">Fale conosco</a></p>
-            <p><a href="#">Seja aluno</a></p>
-            <p><a href="#">Seja professor</a></p>
+            <p><a href="/mesominds/login">Seja aluno</a></p>
+            <!--<p><a href="/mesominds">Seja professor</a></p>-->
         </div>
 
         <div class="grid-item">

@@ -3,10 +3,11 @@
 require_once __DIR__ . '/TurmaController.php';
 
 class GerenciarTurma extends TurmaController
-{    public function entrar(): void
+{
+    public function entrar(): void
     {
         session_start();
-        
+
         if (!$this->isAuthenticated()) {
             header('Location: /mesominds/login');
             exit;
@@ -17,7 +18,8 @@ class GerenciarTurma extends TurmaController
             $_SESSION['error'] = 'ID da turma não fornecido.';
             header('Location: /mesominds/turmas');
             exit;
-        }try {
+        }
+        try {
             $userId = $_SESSION['usuario']['id'];
             $turma = $this->turmaDao->readById($turmaId);
             if (!$turma) {
@@ -36,16 +38,18 @@ class GerenciarTurma extends TurmaController
             }
 
             $this->turmaDao->addUsuarioToTurma($turmaId, $userId);
-            $_SESSION['success'] = 'Inscrição realizada com sucesso!';        } catch (Exception $e) {
+            $_SESSION['success'] = 'Inscrição realizada com sucesso!';
+        } catch (Exception $e) {
             $_SESSION['error'] = 'Erro ao entrar na turma: ' . $e->getMessage();
         }
 
         header('Location: /mesominds/turmas');
         exit;
-    }    public function sair(): void
+    }
+    public function sair(): void
     {
         session_start();
-        
+
         if (!$this->isAuthenticated()) {
             header('Location: /mesominds/login');
             exit;
@@ -56,20 +60,23 @@ class GerenciarTurma extends TurmaController
             $_SESSION['error'] = 'ID da turma não fornecido.';
             header('Location: /mesominds/turmas');
             exit;
-        }try {
+        }
+        try {
             $userId = $_SESSION['usuario']['id'];
-            
+
             $this->turmaDao->removeUsuarioFromTurma($turmaId, $userId);
-            $_SESSION['success'] = 'Você saiu da turma com sucesso!';        } catch (Exception $e) {
+            $_SESSION['success'] = 'Você saiu da turma com sucesso!';
+        } catch (Exception $e) {
             $_SESSION['error'] = 'Erro ao sair da turma: ' . $e->getMessage();
         }
 
         header('Location: /mesominds/turmas');
         exit;
-    }    public function detalhes(): void
+    }
+    public function detalhes(): void
     {
         session_start();
-        
+
         if (!$this->isAuthenticated()) {
             header('Location: /mesominds/login');
             exit;
@@ -88,9 +95,10 @@ class GerenciarTurma extends TurmaController
                 $_SESSION['error'] = 'Turma não encontrada.';
                 header('Location: /mesominds/turmas');
                 exit;
-            }            $usuarios = $this->turmaDao->getUsuariosByTurma($turmaId);
+            }
+            $usuarios = $this->turmaDao->getUsuariosByTurma($turmaId);
             $userTurmas = $this->turmaDao->getTurmasByUsuario($_SESSION['usuario']['id']);
-            
+
             $isUserInTurma = false;
             foreach ($userTurmas as $userTurma) {
                 if ($userTurma->getId() == $turmaId) {
@@ -104,7 +112,7 @@ class GerenciarTurma extends TurmaController
                 'usuarios' => $usuarios,
                 'isUserInTurma' => $isUserInTurma
             ];
-            
+
             $this->render('turmaDetalhes', $data);
         } catch (Exception $e) {
             $_SESSION['error'] = 'Erro ao carregar detalhes da turma: ' . $e->getMessage();

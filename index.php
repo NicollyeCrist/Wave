@@ -4,6 +4,7 @@ require_once __DIR__ . '/router/Router.php';
 $router = new Router();
 
 $router->get('/', 'index.php', '', true); 
+$router->get('/embreve', 'emBreve.php', '', true); 
 
 $router->get('/questoes/cadastrar', 'CadastraQuestao', 'show');
 $router->get('/questoes/editar', 'EditarQuestao', 'edit');

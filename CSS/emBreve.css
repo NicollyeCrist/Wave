@@ -1,22 +1,21 @@
 .em-breve-container {
     min-height: 80vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 2rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    padding: 2rem;
 }
 
 .em-breve-content {
     max-width: 600px;
+    text-align: center;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
 .em-breve-icon {
@@ -36,13 +35,33 @@
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
+    line-height: 1.5;
 }
 
-.em-breve-description {
+.funcionalidades-em-breve {
+    margin: 2rem 0;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.funcionalidades-em-breve h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.funcionalidades-em-breve ul {
+    list-style: none;
+    padding: 0;
+}
+
+.funcionalidades-em-breve li {
+    padding: 0.5rem 0;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .voltar-btn {
@@ -55,6 +74,7 @@
     font-weight: bold;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    margin-top: 1rem;
 }
 
 .voltar-btn:hover {
@@ -63,21 +83,26 @@
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
 }
 
-.features-preview {
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
-.feature-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 10px;
-    font-size: 0.9rem;
-}
-
-.feature-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+@media (max-width: 768px) {
+    .em-breve-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .em-breve-title {
+        font-size: 2rem;
+    }
+    
+    .em-breve-subtitle {
+        font-size: 1.1rem;
+    }
 }

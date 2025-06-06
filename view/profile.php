@@ -53,10 +53,10 @@
                         <label>Nome Completo</label>
                         <span><?php echo htmlspecialchars($usuario['nome']); ?></span>
                     </div>
-                    <div class="info-item">
+                    <!--<div class="info-item">
                         <label>Email</label>
                         <span><?php echo htmlspecialchars($usuario['email']); ?></span>
-                    </div>
+                    </div>-->
                     <div class="info-item">
                         <label>Tipo de Usuário</label>
                         <span><?php echo ucfirst($usuario['tipo_usuario']); ?></span>

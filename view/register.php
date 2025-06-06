@@ -45,17 +45,17 @@
                     value="<?= isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : '' ?>">
             </div>
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="form-label">Telefone</label>
                 <input type="tel" class="form-input" name="telefone" required
                     value="<?= isset($_POST['telefone']) ? htmlspecialchars($_POST['telefone']) : '' ?>">
-            </div>
+            </div>-->
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label class="form-label">E-mail</label>
                 <input type="email" class="form-input" name="email" required
                     value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>">
-            </div>
+            </div>-->
 
             <!--<div class="form-group">
                 <label class="form-label">Como deseja se cadastrar:</label>

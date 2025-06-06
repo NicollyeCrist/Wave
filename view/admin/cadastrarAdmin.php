@@ -169,7 +169,6 @@
     </style>
 
     <script>
-        // Validação de senha
         document.getElementById('confirmar_senha').addEventListener('input', function() {
             const senha = document.getElementById('senha').value;
             const confirmarSenha = this.value;

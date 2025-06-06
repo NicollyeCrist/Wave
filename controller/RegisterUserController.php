@@ -27,7 +27,7 @@ class RegisterUserController extends UserController
             $senha = $_POST['senha'] ?? '';
             $confirma_senha = $_POST['confirma_senha'] ?? '';
 
-            if (empty($nome) || empty($telefone) || empty($email) || empty($tipo_usuario) || empty($escola) || empty($senha)) {
+            if (empty($nome) || empty($tipo_usuario) || empty($escola) || empty($senha)) {
                 $_SESSION['mensagem_erro'] = 'Todos os campos são obrigatórios.';
                 header("Location: /mesominds/register");
                 exit;

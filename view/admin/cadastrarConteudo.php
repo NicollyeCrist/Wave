@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Conteúdo - MesoMinds</title>
     <link rel="stylesheet" type="text/css" href="/mesominds/CSS/global.css">
-    <link rel="stylesheet" type="text/css" href="/mesominds/CSS/turmas.css">
     <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/footer.css">
     <link rel="stylesheet" type="text/css" href="/mesominds/view/partials/header.css">
     <link rel="icon" href="/mesominds/imgs/favicon.ico" type="image/x-icon">

@@ -23,6 +23,12 @@ body, html {
     font-family: "Oswald", "Roboto", Arial, Helvetica, sans-serif;
     background-color: var(--color-background-contrast);
     color: white;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 body h1,h2{

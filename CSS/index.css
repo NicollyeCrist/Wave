@@ -1,0 +1,256 @@
+.heroSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    position: relative;
+    min-height: 300px;
+}
+
+.ComeceAgoraArea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    background-color: var(--color-background-contrast);
+    padding: 3%;
+}
+
+.ComeceAgoraArea h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.ComeceAgoraArea a {
+    background-color: var(--color-button-default);
+    color: white;
+    padding: 0.75vh 1.5vw;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: .9rem;
+    box-shadow: 1px 1px 5px var(--color-background-contrast);
+    transition: transform .3s, opacity .3s;
+}
+
+.ComeceAgoraArea a:hover {
+    opacity: .9;
+    transform: translateY(-2px);
+}
+
+.bannerArea {
+    background-color: rgb(0, 255, 170);
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bannerArea img {
+    width: 100%;
+    display: block;
+}
+
+.profArea {
+    margin: 2rem 1rem;
+    text-align: center;
+}
+
+.profArea h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.profImgsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+
+.profImgsContainer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.profItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.profImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--color-background);
+}
+
+.profImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profName {
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.questoesContainer {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.questoesContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.questContArea {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.questContArea a {
+    background: var(--color-Second);
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 1px 1px 1px var(--color-background-contrast);
+}
+.questContArea a:hover{
+ background-color :var(--color-action);
+}
+.questEnemeArea {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1rem;
+    width: 100%;
+}
+
+.questEnemeArea a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-button-default);
+    color: white;
+    text-decoration: none;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    height: 100%;
+    box-shadow: 1px 1px 1px var(--color-background-contrast);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.questEnemeArea a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.CadasAgoraArea {
+    background: var(--color-background-contrast);
+    color: var(--color-sucess);
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    padding: 3em;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: 1px solid var(--color-background);
+    box-shadow: 1px 1px 1px var(--color-background);
+}
+
+.CadasAgoraArea h1 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.CadasAgoraArea a {
+    background-color: var(--color-button-default);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 600px) {
+
+    .ComeceAgoraArea h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .ComeceAgoraArea a {
+        width: 60%;
+        height: 40%;
+        color: white;
+        padding: 1.5vh 1.5vw;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: .9rem;
+        box-shadow: 1px 1px 5px var(--color-background-contrast);
+    }
+
+    .profImgsContainer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .questoesContent {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .questContArea {
+        width: 45%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .questEnemeArea {
+        width: 55%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .questEnemeArea a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        height: 80%;
+        font-size: 1.5rem;
+    }
+}
